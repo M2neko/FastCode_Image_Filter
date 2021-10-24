@@ -14,6 +14,8 @@ Mat exponential_function(Mat channel, float exp){
 
 	for (int i = 0; i < 256; i++)
 		table.at<uchar>(i) = min((int)pow(i,exp),255);
+		// __m512d _mm512_gmin_pd (__m512d a, (255.0, 255.0, 255.0, 255.0)))
+		// _m128d _mm_pow_pd (__m128d a, __m128d b)
 
 	LUT(channel,table,channel);
 	return channel;
