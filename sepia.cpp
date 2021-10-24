@@ -18,9 +18,9 @@ void sepia(Mat img){
 	cvtColor(res,res,COLOR_RGB2BGR);
 	auto end   = system_clock::now();
 	auto duration = duration_cast<microseconds>(end - start);
-	cout <<  "It takes" 
+	cout <<  "It takes " 
      << double(duration.count()) * microseconds::period::num / microseconds::period::den 
-     << "seconds" << endl;
+     << " seconds" << endl;
 	imshow("original",img);
 	imshow("Sepia",res);
 	waitKey(0);

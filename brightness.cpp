@@ -3,9 +3,11 @@
 #include <opencv2/highgui.hpp>
 #include <opencv2/imgproc.hpp>
 #include <xmmintrin.h>
+#include <chrono> 
 
 using namespace std;
 using namespace cv;
+using namespace chrono;
 
 
 void nothing(int x, void* data) {}
@@ -17,9 +19,11 @@ void brightness(Mat img) {
 	int slider = 100;
 	createTrackbar("val", "image", nullptr, 150, nothing);
 	setTrackbarPos("val", "image", slider);
+
 	Mat hsv;
 
 	while (true) {
+		auto start = system_clock::now();
 		cvtColor(img, hsv, COLOR_BGR2HSV);
 		float val = getTrackbarPos("val","image");
 		val=val/100.0;
@@ -84,6 +88,12 @@ void brightness(Mat img) {
 
     		Mat res;
     		cvtColor(hsvNew,res,COLOR_HSV2BGR);
+
+			auto end   = system_clock::now();
+	auto duration = duration_cast<microseconds>(end - start);
+	cout <<  "It takes " 
+     << double(duration.count()) * microseconds::period::num / microseconds::period::den 
+     << " seconds" << endl;
 
     		imshow("original",img);
     		imshow("image",res);
