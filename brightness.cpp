@@ -16,11 +16,13 @@ void brightness(Mat img, int times)
 	for (int i = 0; i < times; i++)
 	{
 
+
 		Mat hsv;
 
 		cvtColor(img, hsv, COLOR_BGR2HSV);
-		float val = 155;
+		float val = 37;
 		val = val / 100.0;
+		__m128 b = _mm_set1_ps(val);
 
 		Mat channels[3];
 		split(hsv, channels);
@@ -35,14 +37,9 @@ void brightness(Mat img, int times)
 		{
 			for (int j = 0; j < H.size().width; j += 4)
 			{
-				// scale pixel values up or down for channel 1(Saturation)
-				__m128 a = _mm_set_ps(S.at<float>(i, j), S.at<float>(i, j + 1), S.at<float>(i, j + 2), S.at<float>(i, j + 3));
-				__m128 b = _mm_set1_ps(val);
-				__m128 c = _mm_mul_ps(a, b);
-				S.at<float>(i, j) = c[0];
-				S.at<float>(i, j + 1) = c[1];
-				S.at<float>(i, j + 2) = c[2];
-				S.at<float>(i, j + 3) = c[3];
+				__m128 a = _mm_set_ps(S.at<float>(i, j + 3), S.at<float>(i, j + 2), S.at<float>(i, j + 1), S.at<float>(i, j));
+				_mm_store_ps(&S.at<float>(i, j), _mm_mul_ps(a, b));
+
 				// S.at<float>(i,j) = min(S.at<float>(i,j), 255);
 				// _mm512_gmin_pd (__m512d a, (255.0, 255.0, 255.0, 255.0)))
 				if (S.at<float>(i, j) > 255)
@@ -59,13 +56,8 @@ void brightness(Mat img, int times)
 
 				// scale pixel values up or down for channel 2(Value)
 
-				__m128 d = _mm_set_ps(V.at<float>(i, j), V.at<float>(i, j + 1), V.at<float>(i, j + 2), V.at<float>(i, j + 3));
-				__m128 e = _mm_set1_ps(val);
-				__m128 f = _mm_mul_ps(d, e);
-				V.at<float>(i, j) = f[0];
-				V.at<float>(i, j + 1) = f[1];
-				V.at<float>(i, j + 2) = f[2];
-				V.at<float>(i, j + 3) = f[3];
+				__m128 d = _mm_set_ps(V.at<float>(i, j + 3), V.at<float>(i, j + 2), V.at<float>(i, j + 1), V.at<float>(i, j));
+				_mm_store_ps(&V.at<float>(i, j), _mm_mul_ps(d, b));
 
 				if (V.at<float>(i, j) > 255)
 					V.at<float>(i, j) = 255;
