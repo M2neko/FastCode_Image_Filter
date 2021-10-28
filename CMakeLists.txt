@@ -38,6 +38,7 @@ MACRO(add_example name)
 ENDMACRO()
 
 add_example(brightness)
+add_example(brightness_ref)
 add_example(sepia)
 add_example(duo_tone)
 add_example(60s_TV)
