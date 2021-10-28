@@ -19,7 +19,8 @@ void brightness(Mat img, int times)
 		Mat hsv;
 
 		cvtColor(img, hsv, COLOR_BGR2HSV);
-		float val = 70;
+		float val = 37;
+		// cin >> val;
 		val = val / 100.0;
 		__m128 b = _mm_set1_ps(val);
 		__m128 q = _mm_set1_ps(255.0);
@@ -33,18 +34,15 @@ void brightness(Mat img, int times)
 		Mat V = channels[2];
 		V.convertTo(V, CV_32F);
 
-		for (int i = 0; i < H.size().height; i++)
-		{
-			for (int j = 0; j < H.size().width; j += 4)
-			{
-				__m128 a = _mm_set_ps(S.at<float>(i, j + 3), S.at<float>(i, j + 2), S.at<float>(i, j + 1), S.at<float>(i, j));
-				_mm_store_ps(&S.at<float>(i, j), _mm_min_ps(_mm_mul_ps(a, b), q));
+		float* x = &(S.at<float>(0, 0));
+		float* y = &(V.at<float>(0, 0));
 
-				// scale pixel values up or down for channel 2(Value)
+		for (int i = 0; i < H.size().height * H.size().width; i += 4) {
+			__m128 a = _mm_set_ps(*(x + i + 3), *(x + i + 2), *(x + i + 1), *(x + i));
+			_mm_store_ps(x + i, _mm_min_ps(_mm_mul_ps(a, b), q));
 
-				__m128 d = _mm_set_ps(V.at<float>(i, j + 3), V.at<float>(i, j + 2), V.at<float>(i, j + 1), V.at<float>(i, j));
-				_mm_store_ps(&V.at<float>(i, j), _mm_min_ps(_mm_mul_ps(d, b), q));
-			}
+			__m128 d = _mm_set_ps(*(y + i + 3), *(y + i + 2), *(y + i + 1), *(y + i));
+			_mm_store_ps(y + i, _mm_min_ps(_mm_mul_ps(d, b), q));
 		}
 
 		H.convertTo(H, CV_8U);
@@ -58,9 +56,9 @@ void brightness(Mat img, int times)
 		Mat res;
 		cvtColor(hsvNew, res, COLOR_HSV2BGR);
 
-		imshow("original",img);
-    	imshow("image",res);
-		waitKey(0);
+		// imshow("original",img);
+    	// imshow("image",res);
+		// waitKey(0);
 	}
 }
 
