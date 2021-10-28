@@ -62,7 +62,7 @@ void brightness(Mat img, int times)
 int main(int argc, char **argv)
 {
 	int times = atoi(argv[1]);
-	Mat img = imread("image.jpg");
+	Mat img = imread("image2.jpg");
 	auto start = system_clock::now();
 	brightness(img, times);
 	auto end = system_clock::now();
