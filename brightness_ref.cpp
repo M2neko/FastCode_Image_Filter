@@ -3,6 +3,7 @@
 #include <opencv2/highgui.hpp>
 #include <opencv2/imgproc.hpp>
 #include <chrono>
+#define TEST_MODE 0
 
 using namespace std;
 using namespace cv;
@@ -17,7 +18,8 @@ void brightness(Mat img, int times)
 	{
 		Mat hsv;
 		cvtColor(img, hsv, COLOR_BGR2HSV);
-		float val = 27;
+		float val = 38;
+		if (TEST_MODE) cin >> val;
 		val = val / 100.0;
 		Mat channels[3];
 		split(hsv, channels);
@@ -56,6 +58,11 @@ void brightness(Mat img, int times)
 
 		Mat res;
 		cvtColor(hsvNew, res, COLOR_HSV2BGR);
+		if (TEST_MODE) {
+			imshow("original",img);
+			imshow("image",res);
+			waitKey(0);
+		}
 	}
 }
 
@@ -68,7 +75,7 @@ int main(int argc, char **argv)
 	auto end = system_clock::now();
 	auto duration = duration_cast<microseconds>(end - start);
 	cout << "It takes "
-		 << double(duration.count()) * microseconds::period::num / microseconds::period::den
-		 << " seconds" << endl;
+		 << double(duration.count()) * microseconds::period::num / microseconds::period::den * 1000.0 / double(times)
+		 << " milliseconds" << endl;
 	return 0;
 }
