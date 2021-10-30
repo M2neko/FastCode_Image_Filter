@@ -34,7 +34,7 @@ void brightness(Mat img) {
 		for (int i=0; i < H.size().height; i++){
 			for (int j=0; j < H.size().width; j++){
 	// scale pixel values up or down for channel 1(Saturation)
-				S.at<float>(i,j) *= val;
+				S.at<float>(i,j) *= val; //(S(i,j) *= val)
 				if (S.at<float>(i,j) > 255)
 					S.at<float>(i,j) = 255;
 
