@@ -36,73 +36,17 @@ void brightness(Mat img, int times)
 
 		for (int i = 0; i < H.size().height; i++)
 		{
-			for (int j = 0; H.size().width - j >= 8; j+=8)
+			for (int j = 0; j < H.size().width; j++)
 			{
 				// scale pixel values up or down for channel 1(Saturation)
 				S.at<float>(i, j) *= val;
 				if (S.at<float>(i, j) > 255)
 					S.at<float>(i, j) = 255;
 
-				S.at<float>(i, j + 1) *= val;
-				if (S.at<float>(i, j + 1) > 255)
-					S.at<float>(i, j + 1) = 255;
-
-				S.at<float>(i, j + 2) *= val;
-				if (S.at<float>(i, j + 2) > 255)
-					S.at<float>(i, j + 2) = 255;
-
-				S.at<float>(i, j + 3) *= val;
-				if (S.at<float>(i, j + 3) > 255)
-					S.at<float>(i, j + 3) = 255;
-
-				S.at<float>(i, j + 4) *= val;
-				if (S.at<float>(i, j + 4) > 255)
-					S.at<float>(i, j + 4) = 255;
-
-				S.at<float>(i, j + 5) *= val;
-				if (S.at<float>(i, j + 5) > 255)
-					S.at<float>(i, j + 5) = 255;
-
-				S.at<float>(i, j + 6) *= val;
-				if (S.at<float>(i, j + 6) > 255)
-					S.at<float>(i, j + 6) = 255;
-
-				S.at<float>(i, j + 7) *= val;
-				if (S.at<float>(i, j + 7) > 255)
-					S.at<float>(i, j + 7) = 255;
-
 				// scale pixel values up or down for channel 2(Value)
 				V.at<float>(i, j) *= val;
 				if (V.at<float>(i, j) > 255)
 					V.at<float>(i, j) = 255;
-
-				V.at<float>(i, j + 1) *= val;
-				if (V.at<float>(i, j + 1) > 255)
-					V.at<float>(i, j + 1) = 255;
-				
-				V.at<float>(i, j + 2) *= val;
-				if (V.at<float>(i, j + 2) > 255)
-					V.at<float>(i, j + 2) = 255;
-
-				V.at<float>(i, j + 3) *= val;
-				if (V.at<float>(i, j + 3) > 255)
-					V.at<float>(i, j + 3) = 255;
-
-				V.at<float>(i, j + 4) *= val;
-				if (V.at<float>(i, j + 4) > 255)
-					V.at<float>(i, j + 4) = 255;
-				
-				V.at<float>(i, j + 5) *= val;
-				if (V.at<float>(i, j + 5) > 255)
-					V.at<float>(i, j + 5) = 255;
-
-				V.at<float>(i, j + 6) *= val;
-				if (V.at<float>(i, j + 6) > 255)
-					V.at<float>(i, j + 6) = 255;
-
-				V.at<float>(i, j + 7) *= val;
-				if (V.at<float>(i, j + 7) > 255)
-					V.at<float>(i, j + 7) = 255;
 			}
 		}
 
@@ -131,7 +75,7 @@ void brightness(Mat img, int times)
 int main(int argc, char **argv)
 {
 	int times = atoi(argv[1]);
-	Mat img = imread("image2.jpg");
+	Mat img = imread("image5.jpg");
 	// auto start = system_clock::now();
 	brightness(img, times);
 	// auto end = system_clock::now();

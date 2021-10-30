@@ -40,7 +40,7 @@ void brightness(Mat img, int times)
 		__m256 q = _mm256_set1_ps(255.0);
 		float *x = &(S.at<float>(0, 0));
 		float *y = &(V.at<float>(0, 0));
-		for (int i = 0; i < H.size().height * H.size().width; i += 48)
+		for (int i = 0; H.size().height * H.size().width - i >= 48; i += 48)
 		{
 			_mm256_store_ps(x + i, _mm256_min_ps(_mm256_mul_ps(_mm256_load_ps(x + i), b), q));
 			_mm256_store_ps(x + i + 8, _mm256_min_ps(_mm256_mul_ps(_mm256_load_ps(x + i + 8), b), q));
@@ -81,7 +81,7 @@ void brightness(Mat img, int times)
 int main(int argc, char **argv)
 {
 	int times = atoi(argv[1]);
-	Mat img = imread("image2.jpg");
+	Mat img = imread("image5.jpg");
 	// auto start = system_clock::now();
 	brightness(img, times);
 	// auto end = system_clock::now();
