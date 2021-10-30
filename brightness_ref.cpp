@@ -9,6 +9,8 @@ using namespace std;
 using namespace cv;
 using namespace chrono;
 
+double dsum = 0.0;
+
 void nothing(int x, void *data) {}
 
 void brightness(Mat img, int times)
@@ -30,23 +32,83 @@ void brightness(Mat img, int times)
 		Mat V = channels[2];
 		V.convertTo(V, CV_32F);
 
+		auto start = system_clock::now();
+
 		for (int i = 0; i < H.size().height; i++)
 		{
-			for (int j = 0; j < H.size().width; j++)
+			for (int j = 0; H.size().width - j >= 8; j+=8)
 			{
 				// scale pixel values up or down for channel 1(Saturation)
 				S.at<float>(i, j) *= val;
-				// S.at<float>(i,j) = min(S.at<float>(i,j), 255);
-				// _mm512_gmin_pd (__m512d a, (255.0, 255.0, 255.0, 255.0)))
 				if (S.at<float>(i, j) > 255)
 					S.at<float>(i, j) = 255;
+
+				S.at<float>(i, j + 1) *= val;
+				if (S.at<float>(i, j + 1) > 255)
+					S.at<float>(i, j + 1) = 255;
+
+				S.at<float>(i, j + 2) *= val;
+				if (S.at<float>(i, j + 2) > 255)
+					S.at<float>(i, j + 2) = 255;
+
+				S.at<float>(i, j + 3) *= val;
+				if (S.at<float>(i, j + 3) > 255)
+					S.at<float>(i, j + 3) = 255;
+
+				S.at<float>(i, j + 4) *= val;
+				if (S.at<float>(i, j + 4) > 255)
+					S.at<float>(i, j + 4) = 255;
+
+				S.at<float>(i, j + 5) *= val;
+				if (S.at<float>(i, j + 5) > 255)
+					S.at<float>(i, j + 5) = 255;
+
+				S.at<float>(i, j + 6) *= val;
+				if (S.at<float>(i, j + 6) > 255)
+					S.at<float>(i, j + 6) = 255;
+
+				S.at<float>(i, j + 7) *= val;
+				if (S.at<float>(i, j + 7) > 255)
+					S.at<float>(i, j + 7) = 255;
 
 				// scale pixel values up or down for channel 2(Value)
 				V.at<float>(i, j) *= val;
 				if (V.at<float>(i, j) > 255)
 					V.at<float>(i, j) = 255;
+
+				V.at<float>(i, j + 1) *= val;
+				if (V.at<float>(i, j + 1) > 255)
+					V.at<float>(i, j + 1) = 255;
+				
+				V.at<float>(i, j + 2) *= val;
+				if (V.at<float>(i, j + 2) > 255)
+					V.at<float>(i, j + 2) = 255;
+
+				V.at<float>(i, j + 3) *= val;
+				if (V.at<float>(i, j + 3) > 255)
+					V.at<float>(i, j + 3) = 255;
+
+				V.at<float>(i, j + 4) *= val;
+				if (V.at<float>(i, j + 4) > 255)
+					V.at<float>(i, j + 4) = 255;
+				
+				V.at<float>(i, j + 5) *= val;
+				if (V.at<float>(i, j + 5) > 255)
+					V.at<float>(i, j + 5) = 255;
+
+				V.at<float>(i, j + 6) *= val;
+				if (V.at<float>(i, j + 6) > 255)
+					V.at<float>(i, j + 6) = 255;
+
+				V.at<float>(i, j + 7) *= val;
+				if (V.at<float>(i, j + 7) > 255)
+					V.at<float>(i, j + 7) = 255;
 			}
 		}
+
+		auto end = system_clock::now();
+		auto duration = duration_cast<microseconds>(end - start);
+		dsum += duration.count();
 
 		H.convertTo(H, CV_8U);
 		S.convertTo(S, CV_8U);
@@ -69,13 +131,13 @@ void brightness(Mat img, int times)
 int main(int argc, char **argv)
 {
 	int times = atoi(argv[1]);
-	Mat img = imread("image4.jpg");
-	auto start = system_clock::now();
+	Mat img = imread("image2.jpg");
+	// auto start = system_clock::now();
 	brightness(img, times);
-	auto end = system_clock::now();
-	auto duration = duration_cast<microseconds>(end - start);
+	// auto end = system_clock::now();
+	// auto duration = duration_cast<microseconds>(end - start);
 	cout << "It takes "
-		 << double(duration.count()) * microseconds::period::num / microseconds::period::den * 1000.0 / double(times)
+		 << dsum * microseconds::period::num / microseconds::period::den * 1000.0 / double(times)
 		 << " milliseconds" << endl;
 	return 0;
 }
