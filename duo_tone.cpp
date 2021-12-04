@@ -20,7 +20,7 @@ Mat exponential_function(Mat channel, float exp)
 	uchar *x = &(table.at<uchar>(0));
 
 #pragma omp parallel num_threads(NUM_THREAD)
-	for (int i = 0; i < 256; i++)
+	for (int i = 0; i < 256; i += 8)
 	{
 		__m256 num = _mm256_set1_ps(i);
 		__m256 duo = _mm256_pow_ps(num, e);
