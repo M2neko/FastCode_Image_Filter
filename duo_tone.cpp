@@ -22,14 +22,14 @@ Mat exponential_function(Mat channel, float exp)
 #pragma omp parallel num_threads(NUM_THREAD)
 	for (int i = 0; i < 256; i++)
 	{
-		// __m256 num = _mm256_set1_ps(i);
-		// __m256 duo = _mm256_pow_ps(num, e);
-		// __m256 set = _mm256_min_ps(duo, q);
+		__m256 num = _mm256_set1_ps(i);
+		__m256 duo = _mm256_pow_ps(num, e);
+		__m256 set = _mm256_min_ps(duo, q);
 
 		// exp256_ps(y*log256_ps(x));
-		// _mm256_store_ps(x + i, set);
+		_mm256_store_ps(x + i, set);
 
-		table.at<uchar>(i) = min((int)pow(i, exp), 255);
+		// table.at<uchar>(i) = min((int)pow(i, exp), 255);
 	}
 	// table.at<uchar>(i) = min((int)pow(i,exp),255);
 
