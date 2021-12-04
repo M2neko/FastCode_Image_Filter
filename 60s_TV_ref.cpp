@@ -2,10 +2,6 @@
 #include <string>
 #include <opencv2/highgui.hpp>
 #include <opencv2/imgproc.hpp>
-#include <immintrin.h>
-#include <omp.h>
-#define NUM_THREAD 16
-#define TEST_MODE 0
 
 using namespace std;
 using namespace cv;
@@ -29,31 +25,16 @@ void tv_60(Mat img) {
 		float thresh = getTrackbarPos("threshold","image");
 		float val = getTrackbarPos("val","image");
 
-		// for (int i=0; i < height; i++){
-		// 	for (int j=0; j < width; j++){
-		// 		if (rand()%100 <= thresh){
-		// 			if (rand()%2 == 0)
-		// 				gray.at<uchar>(i,j) = std::min(gray.at<uchar>(i,j) + rand()%((int)val+1), 255);
-		// 			else
-		// 				gray.at<uchar>(i,j) = std::max(gray.at<uchar>(i,j) - rand()%((int)val+1), 0);
-		// 		}
-		// 	}
-		// }
-#pragma omp parallel num_threads(NUM_THREAD)
-#pragma omp single
-		for (int i = 0; i < height * width; i += 8) {
-#pragma omp task
-{
-			if (rand() % 100 <= thresh) {
-				if (rand() & 1) {
-					//gray.at<uchar>(i,j) = std::max(gray.at<uchar>(i,j) - rand()%((int)val+1), 0);
-
-				} else {
-
+		for (int i=0; i < height; i++){
+			for (int j=0; j < width; j++){
+				if (rand()%100 <= thresh){
+					if (rand()%2 == 0)
+						gray.at<uchar>(i,j) = std::min(gray.at<uchar>(i,j) + rand()%((int)val+1), 255);
+					else
+						gray.at<uchar>(i,j) = std::max(gray.at<uchar>(i,j) - rand()%((int)val+1), 0);
 				}
 			}
 		}
-}
 
     		imshow("original",img);
     		imshow("image",gray);
