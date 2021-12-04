@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 2.8.12)
 
 PROJECT(fastcode_project)
 SET(CMAKE_CXX_STANDARD 11)
-SET(CMAKE_CXX_FLAGS "-Wno-unused-command-line-argument -mavx -fopenmp -I/usr/local/include -L/usr/local/lib -lomp")
+SET(CMAKE_CXX_FLAGS "-O2 -Wno-unused-command-line-argument -mavx -fopenmp -I/usr/local/include -L/usr/local/lib -lomp")
 # add_compile_options(-Xpreprocessor -fopenmp -I/usr/local/include -L/usr/local/lib -lomp)
 
 ######################## EDIT IF REQUIRED ####################
