@@ -117,19 +117,6 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named 60s_TV
-
-# Build rule for target.
-60s_TV: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 60s_TV
-.PHONY : 60s_TV
-
-# fast build rule for target.
-60s_TV/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/60s_TV.dir/build.make CMakeFiles/60s_TV.dir/build
-.PHONY : 60s_TV/fast
-
-#=============================================================================
 # Target rules for targets named emboss
 
 # Build rule for target.
@@ -167,6 +154,32 @@ sepia: cmake_check_build_system
 sepia/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sepia.dir/build.make CMakeFiles/sepia.dir/build
 .PHONY : sepia/fast
+
+#=============================================================================
+# Target rules for targets named 60s_TV
+
+# Build rule for target.
+60s_TV: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 60s_TV
+.PHONY : 60s_TV
+
+# fast build rule for target.
+60s_TV/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/60s_TV.dir/build.make CMakeFiles/60s_TV.dir/build
+.PHONY : 60s_TV/fast
+
+#=============================================================================
+# Target rules for targets named brightness_ref
+
+# Build rule for target.
+brightness_ref: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 brightness_ref
+.PHONY : brightness_ref
+
+# fast build rule for target.
+brightness_ref/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/brightness_ref.dir/build.make CMakeFiles/brightness_ref.dir/build
+.PHONY : brightness_ref/fast
 
 #=============================================================================
 # Target rules for targets named duo_tone
@@ -228,6 +241,30 @@ brightness.s: brightness.cpp.s
 brightness.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/brightness.dir/build.make CMakeFiles/brightness.dir/brightness.cpp.s
 .PHONY : brightness.cpp.s
+
+brightness_ref.o: brightness_ref.cpp.o
+.PHONY : brightness_ref.o
+
+# target to build an object file
+brightness_ref.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/brightness_ref.dir/build.make CMakeFiles/brightness_ref.dir/brightness_ref.cpp.o
+.PHONY : brightness_ref.cpp.o
+
+brightness_ref.i: brightness_ref.cpp.i
+.PHONY : brightness_ref.i
+
+# target to preprocess a source file
+brightness_ref.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/brightness_ref.dir/build.make CMakeFiles/brightness_ref.dir/brightness_ref.cpp.i
+.PHONY : brightness_ref.cpp.i
+
+brightness_ref.s: brightness_ref.cpp.s
+.PHONY : brightness_ref.s
+
+# target to generate assembly for a file
+brightness_ref.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/brightness_ref.dir/build.make CMakeFiles/brightness_ref.dir/brightness_ref.cpp.s
+.PHONY : brightness_ref.cpp.s
 
 duo_tone.o: duo_tone.cpp.o
 .PHONY : duo_tone.o
@@ -311,6 +348,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... 60s_TV"
 	@echo "... brightness"
+	@echo "... brightness_ref"
 	@echo "... duo_tone"
 	@echo "... emboss"
 	@echo "... sepia"
@@ -320,6 +358,9 @@ help:
 	@echo "... brightness.o"
 	@echo "... brightness.i"
 	@echo "... brightness.s"
+	@echo "... brightness_ref.o"
+	@echo "... brightness_ref.i"
+	@echo "... brightness_ref.s"
 	@echo "... duo_tone.o"
 	@echo "... duo_tone.i"
 	@echo "... duo_tone.s"

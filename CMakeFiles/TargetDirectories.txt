@@ -1,7 +1,8 @@
 /Users/gracesun/Desktop/645/project/FastCode_Image_Filter/CMakeFiles/edit_cache.dir
-/Users/gracesun/Desktop/645/project/FastCode_Image_Filter/CMakeFiles/60s_TV.dir
 /Users/gracesun/Desktop/645/project/FastCode_Image_Filter/CMakeFiles/emboss.dir
 /Users/gracesun/Desktop/645/project/FastCode_Image_Filter/CMakeFiles/rebuild_cache.dir
 /Users/gracesun/Desktop/645/project/FastCode_Image_Filter/CMakeFiles/brightness.dir
 /Users/gracesun/Desktop/645/project/FastCode_Image_Filter/CMakeFiles/sepia.dir
+/Users/gracesun/Desktop/645/project/FastCode_Image_Filter/CMakeFiles/60s_TV.dir
+/Users/gracesun/Desktop/645/project/FastCode_Image_Filter/CMakeFiles/brightness_ref.dir
 /Users/gracesun/Desktop/645/project/FastCode_Image_Filter/CMakeFiles/duo_tone.dir

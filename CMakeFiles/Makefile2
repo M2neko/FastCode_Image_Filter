@@ -63,10 +63,11 @@ CMAKE_BINARY_DIR = /Users/gracesun/Desktop/645/project/FastCode_Image_Filter
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/60s_TV.dir/all
 all: CMakeFiles/emboss.dir/all
 all: CMakeFiles/brightness.dir/all
 all: CMakeFiles/sepia.dir/all
+all: CMakeFiles/60s_TV.dir/all
+all: CMakeFiles/brightness_ref.dir/all
 all: CMakeFiles/duo_tone.dir/all
 .PHONY : all
 
@@ -75,38 +76,13 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/60s_TV.dir/clean
 clean: CMakeFiles/emboss.dir/clean
 clean: CMakeFiles/brightness.dir/clean
 clean: CMakeFiles/sepia.dir/clean
+clean: CMakeFiles/60s_TV.dir/clean
+clean: CMakeFiles/brightness_ref.dir/clean
 clean: CMakeFiles/duo_tone.dir/clean
 .PHONY : clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/60s_TV.dir
-
-# All Build rule for target.
-CMakeFiles/60s_TV.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/60s_TV.dir/build.make CMakeFiles/60s_TV.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/60s_TV.dir/build.make CMakeFiles/60s_TV.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/gracesun/Desktop/645/project/FastCode_Image_Filter/CMakeFiles --progress-num=1,2 "Built target 60s_TV"
-.PHONY : CMakeFiles/60s_TV.dir/all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/60s_TV.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/gracesun/Desktop/645/project/FastCode_Image_Filter/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/60s_TV.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/gracesun/Desktop/645/project/FastCode_Image_Filter/CMakeFiles 0
-.PHONY : CMakeFiles/60s_TV.dir/rule
-
-# Convenience name for target.
-60s_TV: CMakeFiles/60s_TV.dir/rule
-.PHONY : 60s_TV
-
-# clean rule for target.
-CMakeFiles/60s_TV.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/60s_TV.dir/build.make CMakeFiles/60s_TV.dir/clean
-.PHONY : CMakeFiles/60s_TV.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/emboss.dir
@@ -115,7 +91,7 @@ CMakeFiles/60s_TV.dir/clean:
 CMakeFiles/emboss.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/emboss.dir/build.make CMakeFiles/emboss.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/emboss.dir/build.make CMakeFiles/emboss.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/gracesun/Desktop/645/project/FastCode_Image_Filter/CMakeFiles --progress-num=7,8 "Built target emboss"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/gracesun/Desktop/645/project/FastCode_Image_Filter/CMakeFiles --progress-num=9,10 "Built target emboss"
 .PHONY : CMakeFiles/emboss.dir/all
 
 # Build rule for subdir invocation for target.
@@ -167,7 +143,7 @@ CMakeFiles/brightness.dir/clean:
 CMakeFiles/sepia.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sepia.dir/build.make CMakeFiles/sepia.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/sepia.dir/build.make CMakeFiles/sepia.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/gracesun/Desktop/645/project/FastCode_Image_Filter/CMakeFiles --progress-num=9,10 "Built target sepia"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/gracesun/Desktop/645/project/FastCode_Image_Filter/CMakeFiles --progress-num=11,12 "Built target sepia"
 .PHONY : CMakeFiles/sepia.dir/all
 
 # Build rule for subdir invocation for target.
@@ -187,13 +163,65 @@ CMakeFiles/sepia.dir/clean:
 .PHONY : CMakeFiles/sepia.dir/clean
 
 #=============================================================================
+# Target rules for target CMakeFiles/60s_TV.dir
+
+# All Build rule for target.
+CMakeFiles/60s_TV.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/60s_TV.dir/build.make CMakeFiles/60s_TV.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/60s_TV.dir/build.make CMakeFiles/60s_TV.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/gracesun/Desktop/645/project/FastCode_Image_Filter/CMakeFiles --progress-num=1,2 "Built target 60s_TV"
+.PHONY : CMakeFiles/60s_TV.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/60s_TV.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/gracesun/Desktop/645/project/FastCode_Image_Filter/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/60s_TV.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/gracesun/Desktop/645/project/FastCode_Image_Filter/CMakeFiles 0
+.PHONY : CMakeFiles/60s_TV.dir/rule
+
+# Convenience name for target.
+60s_TV: CMakeFiles/60s_TV.dir/rule
+.PHONY : 60s_TV
+
+# clean rule for target.
+CMakeFiles/60s_TV.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/60s_TV.dir/build.make CMakeFiles/60s_TV.dir/clean
+.PHONY : CMakeFiles/60s_TV.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/brightness_ref.dir
+
+# All Build rule for target.
+CMakeFiles/brightness_ref.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/brightness_ref.dir/build.make CMakeFiles/brightness_ref.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/brightness_ref.dir/build.make CMakeFiles/brightness_ref.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/gracesun/Desktop/645/project/FastCode_Image_Filter/CMakeFiles --progress-num=5,6 "Built target brightness_ref"
+.PHONY : CMakeFiles/brightness_ref.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/brightness_ref.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/gracesun/Desktop/645/project/FastCode_Image_Filter/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/brightness_ref.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/gracesun/Desktop/645/project/FastCode_Image_Filter/CMakeFiles 0
+.PHONY : CMakeFiles/brightness_ref.dir/rule
+
+# Convenience name for target.
+brightness_ref: CMakeFiles/brightness_ref.dir/rule
+.PHONY : brightness_ref
+
+# clean rule for target.
+CMakeFiles/brightness_ref.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/brightness_ref.dir/build.make CMakeFiles/brightness_ref.dir/clean
+.PHONY : CMakeFiles/brightness_ref.dir/clean
+
+#=============================================================================
 # Target rules for target CMakeFiles/duo_tone.dir
 
 # All Build rule for target.
 CMakeFiles/duo_tone.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/duo_tone.dir/build.make CMakeFiles/duo_tone.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/duo_tone.dir/build.make CMakeFiles/duo_tone.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/gracesun/Desktop/645/project/FastCode_Image_Filter/CMakeFiles --progress-num=5,6 "Built target duo_tone"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/gracesun/Desktop/645/project/FastCode_Image_Filter/CMakeFiles --progress-num=7,8 "Built target duo_tone"
 .PHONY : CMakeFiles/duo_tone.dir/all
 
 # Build rule for subdir invocation for target.

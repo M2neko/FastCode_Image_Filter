@@ -2,7 +2,6 @@
 #include <string>
 #include <opencv2/highgui.hpp>
 #include <opencv2/imgproc.hpp>
-#include <immintrin.h>
 #include <chrono>
 #define TEST_MODE 0
 
@@ -14,18 +13,14 @@ void nothing(int x, void *data) {}
 
 void brightness(Mat img, int times)
 {
+
 	for (int i = 0; i < times; i++)
 	{
-
 		Mat hsv;
-
 		cvtColor(img, hsv, COLOR_BGR2HSV);
 		float val = 38;
 		if (TEST_MODE) cin >> val;
 		val = val / 100.0;
-		__m256 b = _mm256_set1_ps(val);
-		__m256 q = _mm256_set1_ps(255.0);
-
 		Mat channels[3];
 		split(hsv, channels);
 		Mat H = channels[0];
@@ -35,16 +30,20 @@ void brightness(Mat img, int times)
 		Mat V = channels[2];
 		V.convertTo(V, CV_32F);
 
-		float *x = &(S.at<float>(0, 0));
-		float *y = &(V.at<float>(0, 0));
-
-		for (int i = 0; i < H.size().height * H.size().width; i += 16)
+		for (int i = 0; i < H.size().height; i++)
 		{
-			_mm256_store_ps(x + i, _mm256_min_ps(_mm256_mul_ps(_mm256_load_ps(x + i), b), q));
-			_mm256_store_ps(x + i + 8, _mm256_min_ps(_mm256_mul_ps(_mm256_load_ps(x + i + 8), b), q));
+			for (int j = 0; j < H.size().width; j++)
+			{
+				// scale pixel values up or down for channel 1(Saturation)
+				S.at<float>(i, j) *= val;
+				if (S.at<float>(i, j) > 255)
+					S.at<float>(i, j) = 255;
 
-			_mm256_store_ps(y + i, _mm256_min_ps(_mm256_mul_ps(_mm256_load_ps(y + i), b), q));
-			_mm256_store_ps(y + i + 8, _mm256_min_ps(_mm256_mul_ps(_mm256_load_ps(y + i + 8), b), q));
+				// scale pixel values up or down for channel 2(Value)
+				V.at<float>(i, j) *= val;
+				if (V.at<float>(i, j) > 255)
+					V.at<float>(i, j) = 255;
+			}
 		}
 
 		H.convertTo(H, CV_8U);
@@ -75,6 +74,6 @@ int main(int argc, char **argv)
 	auto duration = duration_cast<microseconds>(end - start);
 	cout << "It takes "
 		 << double(duration.count()) * microseconds::period::num / microseconds::period::den * 1000.0 / double(times)
-	<< " milliseconds" << endl;
+		 << " milliseconds" << endl;
 	return 0;
 }

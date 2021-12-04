@@ -1,0 +1,105 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "2.8.12"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"name" : "",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "photoshop_filters_opencv",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "60s_TV::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-60s_TV-bbb1814702b59a77cf17.json",
+					"name" : "60s_TV",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "brightness::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-brightness-1201e48b34fae55f7c4b.json",
+					"name" : "brightness",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "brightness_ref::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-brightness_ref-153ecbd85b90ef1ad52e.json",
+					"name" : "brightness_ref",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "duo_tone::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-duo_tone-1ebf17d47b681f098ab5.json",
+					"name" : "duo_tone",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "emboss::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-emboss-f87e4aa55f917b35066d.json",
+					"name" : "emboss",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "sepia::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-sepia-97098430e32f15843e71.json",
+					"name" : "sepia",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/Users/gracesun/Desktop/645/project/FastCode_Image_Filter",
+		"source" : "/Users/gracesun/Desktop/645/project/FastCode_Image_Filter"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 3
+	}
+}

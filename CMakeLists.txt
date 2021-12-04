@@ -2,6 +2,7 @@ cmake_minimum_required(VERSION 2.8.12)
 
 PROJECT(photoshop_filters_opencv)
 SET(CMAKE_CXX_STANDARD 11)
+add_compile_options(-mavx)
 
 ######################## EDIT IF REQUIRED ####################
 # ###Uncomment the line below and specify the path to OpenCV directory i.e. the path to the OpenCVConfig.cmake file. Check the examples given below.
@@ -38,6 +39,7 @@ MACRO(add_example name)
 ENDMACRO()
 
 add_example(brightness)
+add_example(brightness_ref)
 add_example(sepia)
 add_example(duo_tone)
 add_example(60s_TV)
