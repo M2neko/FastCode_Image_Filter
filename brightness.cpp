@@ -4,6 +4,8 @@
 #include <opencv2/imgproc.hpp>
 #include <immintrin.h>
 #include <chrono>
+#include <omp.h>
+#define NUM_THREAD 4
 #define TEST_MODE 0
 
 using namespace std;
@@ -22,7 +24,7 @@ void brightness(Mat img, int times)
 		Mat hsv;
 
 		cvtColor(img, hsv, COLOR_BGR2HSV);
-		float val = 38;
+		float val = 0.0;
 		if (TEST_MODE) cin >> val;
 		val = val / 100.0;
 
@@ -40,6 +42,8 @@ void brightness(Mat img, int times)
 		__m256 q = _mm256_set1_ps(255.0);
 		float *x = &(S.at<float>(0, 0));
 		float *y = &(V.at<float>(0, 0));
+
+		#pragma omp parallel for num_threads(NUM_THREAD)
 		for (int i = 0; i < H.size().height * H.size().width; i += 48)
 		{
 			__m256 temp111 = _mm256_load_ps(x + i);
@@ -52,7 +56,7 @@ void brightness(Mat img, int times)
 			__m256 temp213 = _mm256_min_ps(temp212, q);
 			_mm256_store_ps(y + i, temp213);
 
-			if (i + 8 == H.size().height * H.size().width) break;
+			// if (i + 8 == H.size().height * H.size().width) break;
 
 			__m256 temp121 = _mm256_load_ps(x + i + 8);
 			__m256 temp122 = _mm256_mul_ps(temp121, b);
@@ -64,7 +68,7 @@ void brightness(Mat img, int times)
 			__m256 temp223 = _mm256_min_ps(temp222, q);
 			_mm256_store_ps(y + i + 8, temp223);
 
-			if (i + 16 == H.size().height * H.size().width) break;
+			// if (i + 16 == H.size().height * H.size().width) break;
 
 			__m256 temp131 = _mm256_load_ps(x + i + 16);
 			__m256 temp132 = _mm256_mul_ps(temp131, b);
@@ -76,7 +80,7 @@ void brightness(Mat img, int times)
 			__m256 temp233 = _mm256_min_ps(temp232, q);
 			_mm256_store_ps(y + i + 16, temp233);
 
-			if (i + 24 == H.size().height * H.size().width) break;
+			// if (i + 24 == H.size().height * H.size().width) break;
 
 			__m256 temp141 = _mm256_load_ps(x + i + 24);
 			__m256 temp142 = _mm256_mul_ps(temp141, b);
@@ -88,7 +92,7 @@ void brightness(Mat img, int times)
 			__m256 temp243 = _mm256_min_ps(temp242, q);
 			_mm256_store_ps(y + i + 24, temp243);
 
-			if (i + 32 == H.size().height * H.size().width) break;
+			// if (i + 32 == H.size().height * H.size().width) break;
 
 
 			__m256 temp151 = _mm256_load_ps(x + i + 32);
@@ -101,7 +105,7 @@ void brightness(Mat img, int times)
 			__m256 temp253 = _mm256_min_ps(temp252, q);
 			_mm256_store_ps(y + i + 32, temp253);
 
-			if (i + 40 == H.size().height * H.size().width) break;
+			// if (i + 40 == H.size().height * H.size().width) break;
 
 			__m256 temp161 = _mm256_load_ps(x + i + 40);
 			__m256 temp162 = _mm256_mul_ps(temp161, b);
@@ -138,7 +142,7 @@ void brightness(Mat img, int times)
 int main(int argc, char **argv)
 {
 	int times = atoi(argv[1]);
-	Mat img = imread("image5.jpg");
+	Mat img = imread("image2.jpg");
 	// auto start = system_clock::now();
 	brightness(img, times);
 	// auto end = system_clock::now();
