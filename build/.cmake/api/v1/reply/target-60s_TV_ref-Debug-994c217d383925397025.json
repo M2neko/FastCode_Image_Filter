@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "sepia"
+			"path" : "60s_TV_ref"
 		}
 	],
 	"backtrace" : 2,
@@ -13,7 +13,6 @@
 			"ADD_EXECUTABLE",
 			"add_example",
 			"TARGET_LINK_LIBRARIES",
-			"add_compile_options",
 			"include_directories"
 		],
 		"files" : 
@@ -28,31 +27,25 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 43,
+				"line" : 48,
 				"parent" : 0
 			},
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 37,
+				"line" : 38,
 				"parent" : 1
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 38,
+				"line" : 39,
 				"parent" : 1
 			},
 			{
 				"command" : 3,
 				"file" : 0,
-				"line" : 5,
-				"parent" : 0
-			},
-			{
-				"command" : 4,
-				"file" : 0,
-				"line" : 34,
+				"line" : 35,
 				"parent" : 0
 			}
 		]
@@ -63,11 +56,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : " -arch x86_64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -mmacosx-version-min=11.2"
-				},
-				{
-					"backtrace" : 4,
-					"fragment" : "-mavx"
+					"fragment" : "-O2 -Wno-unused-command-line-argument -mavx -I/usr/local/include -L/usr/local/lib -g -arch x86_64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -mmacosx-version-min=11.2"
 				},
 				{
 					"fragment" : "-std=gnu++11"
@@ -76,7 +65,7 @@
 			"includes" : 
 			[
 				{
-					"backtrace" : 5,
+					"backtrace" : 4,
 					"isSystem" : true,
 					"path" : "/usr/local/Cellar/opencv/4.5.3_2/include/opencv4"
 				}
@@ -96,11 +85,15 @@
 			]
 		}
 	],
-	"id" : "sepia::@6890427a1f51a3e7e1df",
+	"id" : "60s_TV_ref::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
 		[
+			{
+				"fragment" : "-O2 -Wno-unused-command-line-argument -mavx -I/usr/local/include -L/usr/local/lib -g",
+				"role" : "flags"
+			},
 			{
 				"fragment" : "",
 				"role" : "flags"
@@ -392,8 +385,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "sepia",
-	"nameOnDisk" : "sepia",
+	"name" : "60s_TV_ref",
+	"nameOnDisk" : "60s_TV_ref",
 	"paths" : 
 	{
 		"build" : ".",
@@ -414,7 +407,7 @@
 		{
 			"backtrace" : 2,
 			"compileGroupIndex" : 0,
-			"path" : "sepia.cpp",
+			"path" : "60s_TV_ref.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],

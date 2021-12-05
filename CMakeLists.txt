@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 2.8.12)
 
 PROJECT(fastcode_project)
 SET(CMAKE_CXX_STANDARD 11)
-SET(CMAKE_CXX_FLAGS "-O2 -Wno-unused-command-line-argument -mavx -fopenmp -I/usr/local/include -L/usr/local/lib -lomp")
+SET(CMAKE_CXX_FLAGS "-O2 -Wno-unused-command-line-argument -mavx -I/usr/local/include -L/usr/local/lib")
 # add_compile_options(-Xpreprocessor -fopenmp -I/usr/local/include -L/usr/local/lib -lomp)
 
 ######################## EDIT IF REQUIRED ####################
@@ -39,12 +39,12 @@ MACRO(add_example name)
   TARGET_LINK_LIBRARIES(${name} ${OpenCV_LIBS} )
 ENDMACRO()
 
-add_example(brightness)
-add_example(brightness_ref)
-add_example(sepia)
+# add_example(brightness)
+# add_example(brightness_ref)
+# add_example(sepia)
 # add_example(duo_tone)
-add_example(duo_tone_ref)
-add_example(60s_TV)
+# add_example(duo_tone_ref)
+# add_example(60s_TV)
 add_example(60s_TV_ref)
-add_example(emboss)
+
 

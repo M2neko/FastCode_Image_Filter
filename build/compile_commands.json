@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/Users/gracesun/Desktop/645/project/FastCode_Image_Filter/build",
+  "command": "/usr/bin/clang++  -isystem /usr/local/Cellar/opencv/4.5.3_2/include/opencv4 -O2 -Wno-unused-command-line-argument -mavx -I/usr/local/include -L/usr/local/lib -g -arch x86_64 -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -mmacosx-version-min=11.2 -std=gnu++11 -o CMakeFiles/60s_TV_ref.dir/60s_TV_ref.cpp.o -c /Users/gracesun/Desktop/645/project/FastCode_Image_Filter/60s_TV_ref.cpp",
+  "file": "/Users/gracesun/Desktop/645/project/FastCode_Image_Filter/60s_TV_ref.cpp"
+}
+]
