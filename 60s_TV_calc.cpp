@@ -85,8 +85,11 @@ int main(){
 	Mat img = imread("image2.jpg");
 	tv_60(img);
 
-	cout << "It takes "
-		 << dsum * microseconds::period::num / microseconds::period::den * 1000.0 / 1000
-		 << " milliseconds" << endl;
+	if (!TEST_MODE)
+	{
+		cout << "It takes "
+			<< dsum * microseconds::period::num / microseconds::period::den * 1000.0 / 1000
+			<< " milliseconds" << endl;
+	}
 	return 0;
 }
