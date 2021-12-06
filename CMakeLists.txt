@@ -2,8 +2,6 @@ cmake_minimum_required(VERSION 2.8.12)
 
 PROJECT(fastcode_project)
 SET(CMAKE_CXX_STANDARD 11)
-SET(CMAKE_CXX_FLAGS "-O3 -Wno-unused-command-line-argument -mavx -mavx2 -fopenmp -I/usr/local/include -L/usr/local/lib -lomp")
-# add_compile_options(-Xpreprocessor -fopenmp -I/usr/local/include -L/usr/local/lib -lomp)
 
 ######################## EDIT IF REQUIRED ####################
 # ###Uncomment the line below and specify the path to OpenCV directory i.e. the path to the OpenCVConfig.cmake file. Check the examples given below.
@@ -20,12 +18,6 @@ SET(CMAKE_CXX_FLAGS "-O3 -Wno-unused-command-line-argument -mavx -mavx2 -fopenmp
 
 ##############################################################
 
-
-
-
-###################   ***DO NOT EDIT***  #####################
-
-#############  Common Instructions for all Users  ############
 if(MSVC)
 SET(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /MT")
 endif()
@@ -35,16 +27,21 @@ find_package( OpenCV REQUIRED )
 include_directories( ${OpenCV_INCLUDE_DIRS})
 
 MACRO(add_example name)
+  SET(CMAKE_CXX_FLAGS "-O3 -Wno-unused-command-line-argument -mavx -mavx2 -fopenmp -I/usr/local/include -L/usr/local/lib -lomp")
   ADD_EXECUTABLE(${name} ${name}.cpp)
   TARGET_LINK_LIBRARIES(${name} ${OpenCV_LIBS} )
 ENDMACRO()
 
-# add_example(brightness)
-# add_example(brightness_ref)
-# add_example(sepia)
+MACRO(add_example_ref name)
+  SET(CMAKE_CXX_FLAGS "")
+  ADD_EXECUTABLE(${name} ${name}.cpp)
+  TARGET_LINK_LIBRARIES(${name} ${OpenCV_LIBS} )
+ENDMACRO()
+
+add_example_ref(brightness_ref)
+add_example_ref(duo_tone_ref)
+add_example_ref(60s_TV_ref)
+
+add_example(brightness)
 add_example(duo_tone)
-add_example(duo_tone_ref)
-# add_example(60s_TV)
-# add_example(60s_TV_ref)
-# add_example(emboss)
-# add_example(60s_TV)
+add_example(60s_TV)

@@ -6,5 +6,5 @@ CXX_DEFINES =
 
 CXX_INCLUDES = -isystem /usr/local/Cellar/opencv/4.5.3_3/include/opencv4
 
-CXX_FLAGS = -O2 -Wno-unused-command-line-argument -mavx -fopenmp -I/usr/local/include -L/usr/local/lib -lomp -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++11
+CXX_FLAGS = -O3 -Wno-unused-command-line-argument -mavx -mavx2 -fopenmp -I/usr/local/include -L/usr/local/lib -lomp -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk -std=gnu++11
 

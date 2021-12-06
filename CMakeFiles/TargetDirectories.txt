@@ -1,4 +1,8 @@
-/Users/bingweiwang/Documents/GitHub/FastCode_Image_Filter/CMakeFiles/duo_tone.dir
+/Users/bingweiwang/Documents/GitHub/FastCode_Image_Filter/CMakeFiles/brightness_ref.dir
 /Users/bingweiwang/Documents/GitHub/FastCode_Image_Filter/CMakeFiles/duo_tone_ref.dir
+/Users/bingweiwang/Documents/GitHub/FastCode_Image_Filter/CMakeFiles/60s_TV_ref.dir
+/Users/bingweiwang/Documents/GitHub/FastCode_Image_Filter/CMakeFiles/brightness.dir
+/Users/bingweiwang/Documents/GitHub/FastCode_Image_Filter/CMakeFiles/duo_tone.dir
+/Users/bingweiwang/Documents/GitHub/FastCode_Image_Filter/CMakeFiles/60s_TV.dir
 /Users/bingweiwang/Documents/GitHub/FastCode_Image_Filter/CMakeFiles/edit_cache.dir
 /Users/bingweiwang/Documents/GitHub/FastCode_Image_Filter/CMakeFiles/rebuild_cache.dir

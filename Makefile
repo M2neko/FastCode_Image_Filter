@@ -117,17 +117,17 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named duo_tone
+# Target rules for targets named brightness_ref
 
 # Build rule for target.
-duo_tone: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 duo_tone
-.PHONY : duo_tone
+brightness_ref: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 brightness_ref
+.PHONY : brightness_ref
 
 # fast build rule for target.
-duo_tone/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/duo_tone.dir/build.make CMakeFiles/duo_tone.dir/build
-.PHONY : duo_tone/fast
+brightness_ref/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/brightness_ref.dir/build.make CMakeFiles/brightness_ref.dir/build
+.PHONY : brightness_ref/fast
 
 #=============================================================================
 # Target rules for targets named duo_tone_ref
@@ -141,6 +141,154 @@ duo_tone_ref: cmake_check_build_system
 duo_tone_ref/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/duo_tone_ref.dir/build.make CMakeFiles/duo_tone_ref.dir/build
 .PHONY : duo_tone_ref/fast
+
+#=============================================================================
+# Target rules for targets named 60s_TV_ref
+
+# Build rule for target.
+60s_TV_ref: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 60s_TV_ref
+.PHONY : 60s_TV_ref
+
+# fast build rule for target.
+60s_TV_ref/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/60s_TV_ref.dir/build.make CMakeFiles/60s_TV_ref.dir/build
+.PHONY : 60s_TV_ref/fast
+
+#=============================================================================
+# Target rules for targets named brightness
+
+# Build rule for target.
+brightness: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 brightness
+.PHONY : brightness
+
+# fast build rule for target.
+brightness/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/brightness.dir/build.make CMakeFiles/brightness.dir/build
+.PHONY : brightness/fast
+
+#=============================================================================
+# Target rules for targets named duo_tone
+
+# Build rule for target.
+duo_tone: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 duo_tone
+.PHONY : duo_tone
+
+# fast build rule for target.
+duo_tone/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/duo_tone.dir/build.make CMakeFiles/duo_tone.dir/build
+.PHONY : duo_tone/fast
+
+#=============================================================================
+# Target rules for targets named 60s_TV
+
+# Build rule for target.
+60s_TV: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 60s_TV
+.PHONY : 60s_TV
+
+# fast build rule for target.
+60s_TV/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/60s_TV.dir/build.make CMakeFiles/60s_TV.dir/build
+.PHONY : 60s_TV/fast
+
+60s_TV.o: 60s_TV.cpp.o
+.PHONY : 60s_TV.o
+
+# target to build an object file
+60s_TV.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/60s_TV.dir/build.make CMakeFiles/60s_TV.dir/60s_TV.cpp.o
+.PHONY : 60s_TV.cpp.o
+
+60s_TV.i: 60s_TV.cpp.i
+.PHONY : 60s_TV.i
+
+# target to preprocess a source file
+60s_TV.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/60s_TV.dir/build.make CMakeFiles/60s_TV.dir/60s_TV.cpp.i
+.PHONY : 60s_TV.cpp.i
+
+60s_TV.s: 60s_TV.cpp.s
+.PHONY : 60s_TV.s
+
+# target to generate assembly for a file
+60s_TV.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/60s_TV.dir/build.make CMakeFiles/60s_TV.dir/60s_TV.cpp.s
+.PHONY : 60s_TV.cpp.s
+
+60s_TV_ref.o: 60s_TV_ref.cpp.o
+.PHONY : 60s_TV_ref.o
+
+# target to build an object file
+60s_TV_ref.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/60s_TV_ref.dir/build.make CMakeFiles/60s_TV_ref.dir/60s_TV_ref.cpp.o
+.PHONY : 60s_TV_ref.cpp.o
+
+60s_TV_ref.i: 60s_TV_ref.cpp.i
+.PHONY : 60s_TV_ref.i
+
+# target to preprocess a source file
+60s_TV_ref.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/60s_TV_ref.dir/build.make CMakeFiles/60s_TV_ref.dir/60s_TV_ref.cpp.i
+.PHONY : 60s_TV_ref.cpp.i
+
+60s_TV_ref.s: 60s_TV_ref.cpp.s
+.PHONY : 60s_TV_ref.s
+
+# target to generate assembly for a file
+60s_TV_ref.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/60s_TV_ref.dir/build.make CMakeFiles/60s_TV_ref.dir/60s_TV_ref.cpp.s
+.PHONY : 60s_TV_ref.cpp.s
+
+brightness.o: brightness.cpp.o
+.PHONY : brightness.o
+
+# target to build an object file
+brightness.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/brightness.dir/build.make CMakeFiles/brightness.dir/brightness.cpp.o
+.PHONY : brightness.cpp.o
+
+brightness.i: brightness.cpp.i
+.PHONY : brightness.i
+
+# target to preprocess a source file
+brightness.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/brightness.dir/build.make CMakeFiles/brightness.dir/brightness.cpp.i
+.PHONY : brightness.cpp.i
+
+brightness.s: brightness.cpp.s
+.PHONY : brightness.s
+
+# target to generate assembly for a file
+brightness.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/brightness.dir/build.make CMakeFiles/brightness.dir/brightness.cpp.s
+.PHONY : brightness.cpp.s
+
+brightness_ref.o: brightness_ref.cpp.o
+.PHONY : brightness_ref.o
+
+# target to build an object file
+brightness_ref.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/brightness_ref.dir/build.make CMakeFiles/brightness_ref.dir/brightness_ref.cpp.o
+.PHONY : brightness_ref.cpp.o
+
+brightness_ref.i: brightness_ref.cpp.i
+.PHONY : brightness_ref.i
+
+# target to preprocess a source file
+brightness_ref.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/brightness_ref.dir/build.make CMakeFiles/brightness_ref.dir/brightness_ref.cpp.i
+.PHONY : brightness_ref.cpp.i
+
+brightness_ref.s: brightness_ref.cpp.s
+.PHONY : brightness_ref.s
+
+# target to generate assembly for a file
+brightness_ref.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/brightness_ref.dir/build.make CMakeFiles/brightness_ref.dir/brightness_ref.cpp.s
+.PHONY : brightness_ref.cpp.s
 
 duo_tone.o: duo_tone.cpp.o
 .PHONY : duo_tone.o
@@ -198,8 +346,24 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... 60s_TV"
+	@echo "... 60s_TV_ref"
+	@echo "... brightness"
+	@echo "... brightness_ref"
 	@echo "... duo_tone"
 	@echo "... duo_tone_ref"
+	@echo "... 60s_TV.o"
+	@echo "... 60s_TV.i"
+	@echo "... 60s_TV.s"
+	@echo "... 60s_TV_ref.o"
+	@echo "... 60s_TV_ref.i"
+	@echo "... 60s_TV_ref.s"
+	@echo "... brightness.o"
+	@echo "... brightness.i"
+	@echo "... brightness.s"
+	@echo "... brightness_ref.o"
+	@echo "... brightness_ref.i"
+	@echo "... brightness_ref.s"
 	@echo "... duo_tone.o"
 	@echo "... duo_tone.i"
 	@echo "... duo_tone.s"

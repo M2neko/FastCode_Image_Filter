@@ -63,8 +63,12 @@ CMAKE_BINARY_DIR = /Users/bingweiwang/Documents/GitHub/FastCode_Image_Filter
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
-all: CMakeFiles/duo_tone.dir/all
+all: CMakeFiles/brightness_ref.dir/all
 all: CMakeFiles/duo_tone_ref.dir/all
+all: CMakeFiles/60s_TV_ref.dir/all
+all: CMakeFiles/brightness.dir/all
+all: CMakeFiles/duo_tone.dir/all
+all: CMakeFiles/60s_TV.dir/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
@@ -72,9 +76,117 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
-clean: CMakeFiles/duo_tone.dir/clean
+clean: CMakeFiles/brightness_ref.dir/clean
 clean: CMakeFiles/duo_tone_ref.dir/clean
+clean: CMakeFiles/60s_TV_ref.dir/clean
+clean: CMakeFiles/brightness.dir/clean
+clean: CMakeFiles/duo_tone.dir/clean
+clean: CMakeFiles/60s_TV.dir/clean
 .PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/brightness_ref.dir
+
+# All Build rule for target.
+CMakeFiles/brightness_ref.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/brightness_ref.dir/build.make CMakeFiles/brightness_ref.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/brightness_ref.dir/build.make CMakeFiles/brightness_ref.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/bingweiwang/Documents/GitHub/FastCode_Image_Filter/CMakeFiles --progress-num=7,8 "Built target brightness_ref"
+.PHONY : CMakeFiles/brightness_ref.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/brightness_ref.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bingweiwang/Documents/GitHub/FastCode_Image_Filter/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/brightness_ref.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bingweiwang/Documents/GitHub/FastCode_Image_Filter/CMakeFiles 0
+.PHONY : CMakeFiles/brightness_ref.dir/rule
+
+# Convenience name for target.
+brightness_ref: CMakeFiles/brightness_ref.dir/rule
+.PHONY : brightness_ref
+
+# clean rule for target.
+CMakeFiles/brightness_ref.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/brightness_ref.dir/build.make CMakeFiles/brightness_ref.dir/clean
+.PHONY : CMakeFiles/brightness_ref.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/duo_tone_ref.dir
+
+# All Build rule for target.
+CMakeFiles/duo_tone_ref.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/duo_tone_ref.dir/build.make CMakeFiles/duo_tone_ref.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/duo_tone_ref.dir/build.make CMakeFiles/duo_tone_ref.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/bingweiwang/Documents/GitHub/FastCode_Image_Filter/CMakeFiles --progress-num=11,12 "Built target duo_tone_ref"
+.PHONY : CMakeFiles/duo_tone_ref.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/duo_tone_ref.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bingweiwang/Documents/GitHub/FastCode_Image_Filter/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/duo_tone_ref.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bingweiwang/Documents/GitHub/FastCode_Image_Filter/CMakeFiles 0
+.PHONY : CMakeFiles/duo_tone_ref.dir/rule
+
+# Convenience name for target.
+duo_tone_ref: CMakeFiles/duo_tone_ref.dir/rule
+.PHONY : duo_tone_ref
+
+# clean rule for target.
+CMakeFiles/duo_tone_ref.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/duo_tone_ref.dir/build.make CMakeFiles/duo_tone_ref.dir/clean
+.PHONY : CMakeFiles/duo_tone_ref.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/60s_TV_ref.dir
+
+# All Build rule for target.
+CMakeFiles/60s_TV_ref.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/60s_TV_ref.dir/build.make CMakeFiles/60s_TV_ref.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/60s_TV_ref.dir/build.make CMakeFiles/60s_TV_ref.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/bingweiwang/Documents/GitHub/FastCode_Image_Filter/CMakeFiles --progress-num=3,4 "Built target 60s_TV_ref"
+.PHONY : CMakeFiles/60s_TV_ref.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/60s_TV_ref.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bingweiwang/Documents/GitHub/FastCode_Image_Filter/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/60s_TV_ref.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bingweiwang/Documents/GitHub/FastCode_Image_Filter/CMakeFiles 0
+.PHONY : CMakeFiles/60s_TV_ref.dir/rule
+
+# Convenience name for target.
+60s_TV_ref: CMakeFiles/60s_TV_ref.dir/rule
+.PHONY : 60s_TV_ref
+
+# clean rule for target.
+CMakeFiles/60s_TV_ref.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/60s_TV_ref.dir/build.make CMakeFiles/60s_TV_ref.dir/clean
+.PHONY : CMakeFiles/60s_TV_ref.dir/clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/brightness.dir
+
+# All Build rule for target.
+CMakeFiles/brightness.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/brightness.dir/build.make CMakeFiles/brightness.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/brightness.dir/build.make CMakeFiles/brightness.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/bingweiwang/Documents/GitHub/FastCode_Image_Filter/CMakeFiles --progress-num=5,6 "Built target brightness"
+.PHONY : CMakeFiles/brightness.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/brightness.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bingweiwang/Documents/GitHub/FastCode_Image_Filter/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/brightness.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bingweiwang/Documents/GitHub/FastCode_Image_Filter/CMakeFiles 0
+.PHONY : CMakeFiles/brightness.dir/rule
+
+# Convenience name for target.
+brightness: CMakeFiles/brightness.dir/rule
+.PHONY : brightness
+
+# clean rule for target.
+CMakeFiles/brightness.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/brightness.dir/build.make CMakeFiles/brightness.dir/clean
+.PHONY : CMakeFiles/brightness.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/duo_tone.dir
@@ -83,7 +195,7 @@ clean: CMakeFiles/duo_tone_ref.dir/clean
 CMakeFiles/duo_tone.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/duo_tone.dir/build.make CMakeFiles/duo_tone.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/duo_tone.dir/build.make CMakeFiles/duo_tone.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/bingweiwang/Documents/GitHub/FastCode_Image_Filter/CMakeFiles --progress-num=1,2 "Built target duo_tone"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/bingweiwang/Documents/GitHub/FastCode_Image_Filter/CMakeFiles --progress-num=9,10 "Built target duo_tone"
 .PHONY : CMakeFiles/duo_tone.dir/all
 
 # Build rule for subdir invocation for target.
@@ -103,30 +215,30 @@ CMakeFiles/duo_tone.dir/clean:
 .PHONY : CMakeFiles/duo_tone.dir/clean
 
 #=============================================================================
-# Target rules for target CMakeFiles/duo_tone_ref.dir
+# Target rules for target CMakeFiles/60s_TV.dir
 
 # All Build rule for target.
-CMakeFiles/duo_tone_ref.dir/all:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/duo_tone_ref.dir/build.make CMakeFiles/duo_tone_ref.dir/depend
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/duo_tone_ref.dir/build.make CMakeFiles/duo_tone_ref.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/bingweiwang/Documents/GitHub/FastCode_Image_Filter/CMakeFiles --progress-num=3,4 "Built target duo_tone_ref"
-.PHONY : CMakeFiles/duo_tone_ref.dir/all
+CMakeFiles/60s_TV.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/60s_TV.dir/build.make CMakeFiles/60s_TV.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/60s_TV.dir/build.make CMakeFiles/60s_TV.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/bingweiwang/Documents/GitHub/FastCode_Image_Filter/CMakeFiles --progress-num=1,2 "Built target 60s_TV"
+.PHONY : CMakeFiles/60s_TV.dir/all
 
 # Build rule for subdir invocation for target.
-CMakeFiles/duo_tone_ref.dir/rule: cmake_check_build_system
+CMakeFiles/60s_TV.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bingweiwang/Documents/GitHub/FastCode_Image_Filter/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/duo_tone_ref.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/60s_TV.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bingweiwang/Documents/GitHub/FastCode_Image_Filter/CMakeFiles 0
-.PHONY : CMakeFiles/duo_tone_ref.dir/rule
+.PHONY : CMakeFiles/60s_TV.dir/rule
 
 # Convenience name for target.
-duo_tone_ref: CMakeFiles/duo_tone_ref.dir/rule
-.PHONY : duo_tone_ref
+60s_TV: CMakeFiles/60s_TV.dir/rule
+.PHONY : 60s_TV
 
 # clean rule for target.
-CMakeFiles/duo_tone_ref.dir/clean:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/duo_tone_ref.dir/build.make CMakeFiles/duo_tone_ref.dir/clean
-.PHONY : CMakeFiles/duo_tone_ref.dir/clean
+CMakeFiles/60s_TV.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/60s_TV.dir/build.make CMakeFiles/60s_TV.dir/clean
+.PHONY : CMakeFiles/60s_TV.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

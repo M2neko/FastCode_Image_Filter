@@ -51,6 +51,10 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/duo_tone.dir/DependInfo.cmake"
+  "CMakeFiles/brightness_ref.dir/DependInfo.cmake"
   "CMakeFiles/duo_tone_ref.dir/DependInfo.cmake"
+  "CMakeFiles/60s_TV_ref.dir/DependInfo.cmake"
+  "CMakeFiles/brightness.dir/DependInfo.cmake"
+  "CMakeFiles/duo_tone.dir/DependInfo.cmake"
+  "CMakeFiles/60s_TV.dir/DependInfo.cmake"
   )
