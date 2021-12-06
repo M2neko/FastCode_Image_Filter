@@ -82,7 +82,7 @@ void duo_tone(Mat img){
 }
 
 int main(){
-	Mat img = imread("image.jpg");
+	Mat img = imread("image2.jpg");
 	duo_tone(img);
 	return 0;
 }
