@@ -6,7 +6,7 @@
 #include <chrono>
 #include <omp.h>
 #define NUM_THREAD 32
-#define TEST_MODE 0
+#define TEST_MODE 1
 
 using namespace std;
 using namespace cv;

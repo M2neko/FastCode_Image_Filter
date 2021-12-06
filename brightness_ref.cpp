@@ -36,8 +36,6 @@ void brightness(Mat img, int times)
 			{
 				// scale pixel values up or down for channel 1(Saturation)
 				S.at<float>(i, j) *= val;
-				// S.at<float>(i,j) = min(S.at<float>(i,j), 255);
-				// _mm512_gmin_pd (__m512d a, (255.0, 255.0, 255.0, 255.0)))
 				if (S.at<float>(i, j) > 255)
 					S.at<float>(i, j) = 255;
 

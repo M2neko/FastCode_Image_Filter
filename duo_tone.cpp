@@ -12,29 +12,45 @@ using namespace cv;
 
 void nothing(int x, void *data) {}
 
+void test() {
+	__m256 num1 = _mm256_set1_ps(i);
+	__m256 num2 = _mm256_set1_ps(i);
+
+
+
+
+	// for (int i = 0; i < )
+}
+
 Mat exponential_function(Mat channel, float exp)
 {
-	Mat table(1, 256, CV_8U);
-	__m256 q = _mm256_set1_ps(255.0);
+	Mat table(1, 256, CV_32F,Scalar(255));
 	__m256 e = _mm256_set1_ps(exp);
-	uchar *x = &(table.at<uchar>(0));
+	float *x = &(table.at<float>(0));
 
-#pragma omp parallel num_threads(NUM_THREAD)
-	for (int i = 0; i < 256; i += 8)
-	{
-		__m256 num = _mm256_set1_ps(i);
-		__m256 duo = _mm256_pow_ps(num, e);
-		__m256 set = _mm256_min_ps(duo, q);
+//#pragma omp parallel num_threads(NUM_THREAD)
+	if (exp<1.0){
+		for (int i = 0; i < 256; i += 8){
+			__m256 num = _mm256_set1_ps(i);
+			__m256 duo = _mm256_pow_ps(num, e);
 
-		// exp256_ps(y*log256_ps(x));
-		_mm256_store_ps(x + i, set);
+			mul 
 
-		// table.at<uchar>(i) = min((int)pow(i, exp), 255);
+
+			_mm256_store_ps(x + i, duo);
+		}
+	}else{
+		__m256 q = _mm256_set1_ps(255.0);
+		for (int i = 0; i < 256; i += 8){
+			__m256 num = _mm256_set1_ps(i);
+			__m256 duo = _mm256_pow_ps(num, e);
+			__m256 set = _mm256_min_ps(duo, q);
+			_mm256_store_ps(x + i, set);
+			if (set[0]==q[0]){
+				break;
+			}
+		}
 	}
-	// table.at<uchar>(i) = min((int)pow(i,exp),255);
-
-	// __m512d _mm512_gmin_pd (__m512d a, (255.0, 255.0, 255.0, 255.0)))
-	// _m128d _mm_pow_pd (__m128d a, __m128d b)
 
 	LUT(channel, table, channel);
 	return channel;
@@ -69,7 +85,7 @@ void duo_tone(Mat img, int times)
 		// createTrackbar(switch1,"image",&slider2,2,nothing);
 		// createTrackbar(switch2,"image",&slider3,3,nothing);
 		// createTrackbar(switch3,"image",&slider4,1,nothing);
-
+		omp_set_num_threads(3);
 		while (true)
 		{
 			int exp1 = getTrackbarPos("exponent", "image");
@@ -80,22 +96,22 @@ void duo_tone(Mat img, int times)
 			Mat res = img.clone();
 			Mat channels[3];
 			split(img, channels);
-#pragma omp parallel for num_threads(3)
-			for (int i = 0; i < 3; i++)
+			#pragma omp parallel
 			{
-				if ((i == s1) || (i == s2))
+				unsigned int id = omp_get_thread_num();
+				if ((id == s1) || (id == s2))
 				{
-					channels[i] = exponential_function(channels[i], exp);
+					channels[id] = exponential_function(channels[id], exp);
 				}
 				else
 				{
 					if (s3)
 					{
-						channels[i] = exponential_function(channels[i], 2 - exp);
+						channels[id] = exponential_function(channels[id], 2 - exp);
 					}
 					else
 					{
-						channels[i] = Mat::zeros(channels[i].size(), CV_8UC1);
+						channels[id] = Mat::zeros(channels[id].size(), CV_8UC1);
 					}
 				}
 			}
@@ -110,7 +126,7 @@ void duo_tone(Mat img, int times)
 	}
 }
 
-int main()
+int main(int argc, char** argv)
 {
 	int times = 1;
 	if (!TEST_MODE)
