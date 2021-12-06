@@ -2,62 +2,84 @@
 #include <string>
 #include <opencv2/highgui.hpp>
 #include <opencv2/imgproc.hpp>
+#include <chrono>
+#define TEST_MODE 0
 
 using namespace std;
 using namespace cv;
+using namespace chrono;
 
 
 void nothing(int x, void* data) {}
 
 Mat exponential_function(Mat channel, float exp){
-	Mat table(1, 256, CV_8U);
+	Mat table(1, 256, CV_32F);
 
 	for (int i = 0; i < 256; i++)
-		table.at<uchar>(i) = min((int)pow(i,exp),255);
-		// __m512d _mm512_gmin_pd (__m512d a, (255.0, 255.0, 255.0, 255.0)))
-		// _m128d _mm_pow_pd (__m128d a, __m128d b)
+		table.at<float>(i) = (float)min((int)pow(i,exp),255);
+
+	table.convertTo(table, CV_8U);
+	channel.convertTo(channel, CV_8U);
 
 	LUT(channel,table,channel);
 	return channel;
 }
 
-void duo_tone(Mat img){
-	namedWindow("image");
-	int slider1 = 0;
-	int slider2 = 1;
-	int slider3 = 3;
-	int slider4 = 0;
+void duo_tone(Mat img, int times){
 	string switch1 = "0 : BLUE n1 : GREEN n2 : RED";
 	string switch2 = "0 : BLUE n1 : GREEN n2 : RED n3 : NONE";
 	string switch3 = "0 : DARK n1 : LIGHT";
+	if (TEST_MODE)
+	{
+		namedWindow("image");
+		int slider1 = 0;
+		int slider2 = 1;
+		int slider3 = 3;
+		int slider4 = 0;
 
-	createTrackbar("exponent","image",nullptr,10,nothing);
-	setTrackbarPos("exponent","image", slider1);
+		createTrackbar("exponent", "image", nullptr, 10, nothing);
+		setTrackbarPos("exponent", "image", slider1);
 
-	createTrackbar(switch1,"image",nullptr,2,nothing);
-	setTrackbarPos(switch1,"image",slider2);
+		createTrackbar(switch1, "image", nullptr, 2, nothing);
+		setTrackbarPos(switch1, "image", slider2);
 
-	createTrackbar(switch2,"image",nullptr,3,nothing);
-	setTrackbarPos(switch2,"image",slider3);
+		createTrackbar(switch2, "image", nullptr, 3, nothing);
+		setTrackbarPos(switch2, "image", slider3);
 
-	createTrackbar(switch3,"image",nullptr,1,nothing);
-	setTrackbarPos(switch3,"image",slider4);
+		createTrackbar(switch3, "image", nullptr, 1, nothing);
+		setTrackbarPos(switch3, "image", slider4);
+	}
 
-
-	// createTrackbar("exponent","image",&slider1,10,nothing);
-	// createTrackbar(switch1,"image",&slider2,2,nothing);
-	// createTrackbar(switch2,"image",&slider3,3,nothing);
-	// createTrackbar(switch3,"image",&slider4,1,nothing);
+	int exp1;
+	float exp;
+	int s1;
+	int s2;
+	int s3;
+	int count = 0;
 
 	while(true){
-		int exp1 = getTrackbarPos("exponent","image");
-		float exp = 1 + exp1/100.0;
-		int s1 = getTrackbarPos(switch1,"image");
-		int s2 = getTrackbarPos(switch2,"image");
-		int s3 = getTrackbarPos(switch3,"image");
+		if (TEST_MODE)
+		{
+			exp1 = getTrackbarPos("exponent", "image");
+			exp = 1 + exp1 / 100.0;
+			s1 = getTrackbarPos(switch1, "image");
+			s2 = getTrackbarPos(switch2, "image");
+			s3 = getTrackbarPos(switch3, "image");
+		}
+		else
+		{
+			exp1 = 4;
+			exp = 1 + exp1 / 100.0;
+			s1 = 1;
+			s2 = 2;
+			s3 = 1;
+		}
 		Mat res = img.clone();
 		Mat channels[3];
 		split(img,channels);
+		channels[0].convertTo(channels[0], CV_32F);
+		channels[1].convertTo(channels[1], CV_32F);
+		channels[2].convertTo(channels[2], CV_32F);
 		for (int i=0; i<3; i++){
 			if ((i == s1)||(i==s2)){
 				channels[i] = exponential_function(channels[i],exp);
@@ -73,16 +95,41 @@ void duo_tone(Mat img){
 		}
 		vector<Mat> newChannels{channels[0],channels[1],channels[2]};
 		merge(newChannels,res);
-		imshow("Original",img);
-		imshow("image",res);
-		if (waitKey(1) == 'q')
-                        break;
-                }
+
+		if (!TEST_MODE)
+		{
+			if (++count > times)
+				break;
+		}
+
+		if (TEST_MODE)
+		{
+			imshow("Original", img);
+			imshow("image", res);
+			if (waitKey(1) == 'q')
+				break;
+		}
+
+	}
+	if (TEST_MODE)
         destroyAllWindows();
 }
 
-int main(){
-	Mat img = imread("image.jpg");
-	duo_tone(img);
+int main(int argc, char **argv)
+{
+	int times = 1;
+
+	if (!TEST_MODE)
+		times = atoi(argv[1]);
+
+	Mat img = imread("image2.jpg");
+
+	auto start = system_clock::now();
+	duo_tone(img, times);
+	auto end = system_clock::now();
+	auto duration = duration_cast<microseconds>(end - start);
+	cout << "It takes "
+		 << double(duration.count()) * microseconds::period::num / microseconds::period::den * 1000.0 / double(times)
+		 << " milliseconds" << endl;
 	return 0;
 }

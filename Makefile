@@ -117,78 +117,78 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named 60s_TV_ref
+# Target rules for targets named duo_tone
 
 # Build rule for target.
-60s_TV_ref: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 60s_TV_ref
-.PHONY : 60s_TV_ref
+duo_tone: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 duo_tone
+.PHONY : duo_tone
 
 # fast build rule for target.
-60s_TV_ref/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/60s_TV_ref.dir/build.make CMakeFiles/60s_TV_ref.dir/build
-.PHONY : 60s_TV_ref/fast
+duo_tone/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/duo_tone.dir/build.make CMakeFiles/duo_tone.dir/build
+.PHONY : duo_tone/fast
 
 #=============================================================================
-# Target rules for targets named 60s_TV
+# Target rules for targets named duo_tone_ref
 
 # Build rule for target.
-60s_TV: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 60s_TV
-.PHONY : 60s_TV
+duo_tone_ref: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 duo_tone_ref
+.PHONY : duo_tone_ref
 
 # fast build rule for target.
-60s_TV/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/60s_TV.dir/build.make CMakeFiles/60s_TV.dir/build
-.PHONY : 60s_TV/fast
+duo_tone_ref/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/duo_tone_ref.dir/build.make CMakeFiles/duo_tone_ref.dir/build
+.PHONY : duo_tone_ref/fast
 
-60s_TV.o: 60s_TV.cpp.o
-.PHONY : 60s_TV.o
-
-# target to build an object file
-60s_TV.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/60s_TV.dir/build.make CMakeFiles/60s_TV.dir/60s_TV.cpp.o
-.PHONY : 60s_TV.cpp.o
-
-60s_TV.i: 60s_TV.cpp.i
-.PHONY : 60s_TV.i
-
-# target to preprocess a source file
-60s_TV.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/60s_TV.dir/build.make CMakeFiles/60s_TV.dir/60s_TV.cpp.i
-.PHONY : 60s_TV.cpp.i
-
-60s_TV.s: 60s_TV.cpp.s
-.PHONY : 60s_TV.s
-
-# target to generate assembly for a file
-60s_TV.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/60s_TV.dir/build.make CMakeFiles/60s_TV.dir/60s_TV.cpp.s
-.PHONY : 60s_TV.cpp.s
-
-60s_TV_ref.o: 60s_TV_ref.cpp.o
-.PHONY : 60s_TV_ref.o
+duo_tone.o: duo_tone.cpp.o
+.PHONY : duo_tone.o
 
 # target to build an object file
-60s_TV_ref.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/60s_TV_ref.dir/build.make CMakeFiles/60s_TV_ref.dir/60s_TV_ref.cpp.o
-.PHONY : 60s_TV_ref.cpp.o
+duo_tone.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/duo_tone.dir/build.make CMakeFiles/duo_tone.dir/duo_tone.cpp.o
+.PHONY : duo_tone.cpp.o
 
-60s_TV_ref.i: 60s_TV_ref.cpp.i
-.PHONY : 60s_TV_ref.i
+duo_tone.i: duo_tone.cpp.i
+.PHONY : duo_tone.i
 
 # target to preprocess a source file
-60s_TV_ref.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/60s_TV_ref.dir/build.make CMakeFiles/60s_TV_ref.dir/60s_TV_ref.cpp.i
-.PHONY : 60s_TV_ref.cpp.i
+duo_tone.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/duo_tone.dir/build.make CMakeFiles/duo_tone.dir/duo_tone.cpp.i
+.PHONY : duo_tone.cpp.i
 
-60s_TV_ref.s: 60s_TV_ref.cpp.s
-.PHONY : 60s_TV_ref.s
+duo_tone.s: duo_tone.cpp.s
+.PHONY : duo_tone.s
 
 # target to generate assembly for a file
-60s_TV_ref.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/60s_TV_ref.dir/build.make CMakeFiles/60s_TV_ref.dir/60s_TV_ref.cpp.s
-.PHONY : 60s_TV_ref.cpp.s
+duo_tone.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/duo_tone.dir/build.make CMakeFiles/duo_tone.dir/duo_tone.cpp.s
+.PHONY : duo_tone.cpp.s
+
+duo_tone_ref.o: duo_tone_ref.cpp.o
+.PHONY : duo_tone_ref.o
+
+# target to build an object file
+duo_tone_ref.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/duo_tone_ref.dir/build.make CMakeFiles/duo_tone_ref.dir/duo_tone_ref.cpp.o
+.PHONY : duo_tone_ref.cpp.o
+
+duo_tone_ref.i: duo_tone_ref.cpp.i
+.PHONY : duo_tone_ref.i
+
+# target to preprocess a source file
+duo_tone_ref.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/duo_tone_ref.dir/build.make CMakeFiles/duo_tone_ref.dir/duo_tone_ref.cpp.i
+.PHONY : duo_tone_ref.cpp.i
+
+duo_tone_ref.s: duo_tone_ref.cpp.s
+.PHONY : duo_tone_ref.s
+
+# target to generate assembly for a file
+duo_tone_ref.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/duo_tone_ref.dir/build.make CMakeFiles/duo_tone_ref.dir/duo_tone_ref.cpp.s
+.PHONY : duo_tone_ref.cpp.s
 
 # Help Target
 help:
@@ -198,14 +198,14 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... 60s_TV"
-	@echo "... 60s_TV_ref"
-	@echo "... 60s_TV.o"
-	@echo "... 60s_TV.i"
-	@echo "... 60s_TV.s"
-	@echo "... 60s_TV_ref.o"
-	@echo "... 60s_TV_ref.i"
-	@echo "... 60s_TV_ref.s"
+	@echo "... duo_tone"
+	@echo "... duo_tone_ref"
+	@echo "... duo_tone.o"
+	@echo "... duo_tone.i"
+	@echo "... duo_tone.s"
+	@echo "... duo_tone_ref.o"
+	@echo "... duo_tone_ref.i"
+	@echo "... duo_tone_ref.s"
 .PHONY : help
 
 

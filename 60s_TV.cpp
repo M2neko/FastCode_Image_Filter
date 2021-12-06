@@ -280,7 +280,8 @@ void tv_60(Mat img, int times)
 int main(int argc, char **argv)
 {
     int times = 1;
-	times = atoi(argv[1]);
+	if (!TEST_MODE)
+		times = atoi(argv[1]);
 	Mat img = imread("image2.jpg");
 	tv_60(img, times);
 
