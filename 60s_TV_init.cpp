@@ -3,9 +3,16 @@
 #include <opencv2/highgui.hpp>
 #include <opencv2/imgproc.hpp>
 #include <immintrin.h>
+#include <chrono>
+#include <omp.h>
+#define NUM_THREAD 32
+#define TEST_MODE 0
 
 using namespace std;
 using namespace cv;
+using namespace chrono;
+
+double dsum = 0.0;
 
 static __m128i cur_seed;
 
@@ -49,21 +56,25 @@ inline void get_rand(unsigned int *result) {
 
 void nothing(int x, void *data) {}
 
-void tv_60(Mat img)
+void tv_60(Mat img, int times)
 {
 
-    namedWindow("image");
-    int slider = 0;
-    int slider2 = 0;
-    createTrackbar("val", "image", nullptr, 255, nothing);
-    setTrackbarPos("val", "image", slider);
+    if (TEST_MODE)
+	{
+		namedWindow("image");
+		int slider = 0;
+		int slider2 = 0;
+		createTrackbar("val", "image", nullptr, 255, nothing);
+		setTrackbarPos("val", "image", slider);
 
-    createTrackbar("threshold", "image", nullptr, 100, nothing);
-    setTrackbarPos("threshold", "image", slider2);
+		createTrackbar("threshold", "image", nullptr, 100, nothing);
+		setTrackbarPos("threshold", "image", slider2);
+	}
 
     int height = img.size().height;
     int width = img.size().width;
 
+    auto start = system_clock::now();
     // move changed to gray the outer loop to save the time to change it every time in the loop
     Mat gray = img.clone();
     // gray.convertTo(gray,CV_32F);
@@ -81,7 +92,7 @@ void tv_60(Mat img)
     __m256 calc1 = _mm256_set1_ps(0.299);
     __m256 calc2 = _mm256_set1_ps(0.587);
     __m256 calc3 = _mm256_set1_ps(0.114);
-
+#pragma omp parallel for num_threads(NUM_THREAD)
     for (int i = 0; i < height * width; i += 8)
     {
         // 0.299 ∙ Red + 0.587 ∙ Green + 0.114 ∙ Blue.
@@ -107,15 +118,33 @@ void tv_60(Mat img)
     __m256 set_0 = _mm256_set1_ps(0);
     unsigned int randset[8];
 
+    float thresh = 0.0;
+	float val = 0.0;
+	int count = 0;
+
+    auto end = system_clock::now();
+    auto duration = duration_cast<microseconds>(end - start);
+	dsum += duration.count();
+
     while (true)
     {
+        start = system_clock::now();
         Mat gray_temp;
         gray_temp = gray.clone();
-        float thresh = getTrackbarPos("threshold", "image");
-        float val = getTrackbarPos("val", "image");
+        if (TEST_MODE)
+		{
+			thresh = getTrackbarPos("threshold", "image");
+			val = getTrackbarPos("val", "image");
+		}
+		else
+		{
+			thresh = 60.5;
+			val = 120;
+		}
         __m256 get_thresh = _mm256_set1_ps(thresh);
         float *gray_pixel = &(gray_temp.at<float>(0, 0));
 
+#pragma omp parallel for num_threads(NUM_THREAD)
         for (int i = 0; i < height * width; i += 8)
         {
             __m256 gray_channel = _mm256_load_ps(gray_pixel + i);
@@ -126,7 +155,7 @@ void tv_60(Mat img)
             // compare rand() % 100 <= thresh
             // rand_val1[0] - get_thresh[0]是负数，返回0
             // rand_val1[0] - get_thresh[0]是正数，返回nan
-            __m256 cmp_val1 = _mm256_cmp_ps(rand_val1, get_thresh, _CMP_GE_OQ);
+            __m256 cmp_val1 = _mm256_cmp_ps(rand_val1, get_thresh, _CMP_GT_OQ);
             // compare rand() % 2 == 0
             // rand_val2[0]是1，返回0
             // rand_val2[0]是0，返回nan
@@ -140,10 +169,6 @@ void tv_60(Mat img)
             __m256 add_val1 = _mm256_add_ps(gray_channel, blend_1);
             __m256 blend_2 = _mm256_blendv_ps(add_val1, gray_channel, cmp_val1);
 
-            if (blend_2[0] > 0) cout << blend_2[0]  << endl;
-            if (blend_2[1] > 0) cout << blend_2[1]  << endl;
-            if (blend_2[2] > 0) cout << blend_2[2]  << endl;
-            if (blend_2[3] > 0) cout << blend_2[3]  << endl;
             __m256 bound_1 = _mm256_min_ps(blend_2, comp_val1);
             __m256 bound_2 = _mm256_max_ps(bound_1, comp_val2);
 
@@ -152,18 +177,40 @@ void tv_60(Mat img)
 
 
         gray_temp.convertTo(gray_temp,CV_8U);
-        imshow("original", img);
-        imshow("image", gray_temp);
 
-        if (waitKey(1) == 'q')
-            break;
-    }
-    destroyAllWindows();
+        end = system_clock::now();
+        duration = duration_cast<microseconds>(end - start);
+		dsum += duration.count();
+
+        if (!TEST_MODE)
+		{
+			if (++count > times)
+			{
+				break;
+			}
+		}
+
+		if (TEST_MODE)
+		{
+			imshow("original", img);
+			imshow("image", gray_temp);
+			if (waitKey(1) == 'q')
+				break;
+		}
+	}
+	if (TEST_MODE)
+        destroyAllWindows();
 }
 
-int main()
+int main(int argc, char **argv)
 {
-    Mat img = imread("image.jpg");
-    tv_60(img);
-    return 0;
+    int times = 1;
+	times = atoi(argv[1]);
+	Mat img = imread("image.jpg");
+	tv_60(img, times);
+
+	cout << "It takes "
+		 << dsum * microseconds::period::num / microseconds::period::den * 1000.0 / double(times)
+		 << " milliseconds" << endl;
+	return 0;
 }

@@ -9,6 +9,8 @@ using namespace std;
 using namespace cv;
 using namespace chrono;
 
+double dsum = 0.0;
+
 void nothing(int x, void *data) {}
 
 void tv_60(Mat img, int times)
@@ -29,6 +31,7 @@ void tv_60(Mat img, int times)
 	int count = 0;
 	while (true)
 	{
+		auto start = system_clock::now();
 		int height = img.size().height;
 		int width = img.size().width;
 		Mat gray;
@@ -58,6 +61,10 @@ void tv_60(Mat img, int times)
 			}
 		}
 
+		auto end = system_clock::now();
+        auto duration = duration_cast<microseconds>(end - start);
+		dsum += duration.count();
+
 		if (!TEST_MODE)
 		{
 			if (++count > times)
@@ -83,13 +90,11 @@ int main(int argc, char **argv)
 {
 	int times = 1;
 	times = atoi(argv[1]);
-	Mat img = imread("image.jpg");
-	auto start = system_clock::now();
+	Mat img = imread("image2.jpg");
 	tv_60(img, times);
-	auto end = system_clock::now();
-	auto duration = duration_cast<microseconds>(end - start);
+
 	cout << "It takes "
-		 << double(duration.count()) * microseconds::period::num / microseconds::period::den * 1000.0 / double(times)
+		 << dsum * microseconds::period::num / microseconds::period::den * 1000.0 / double(times)
 		 << " milliseconds" << endl;
 	return 0;
 }

@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/gracesun/Desktop/645/project/FastCode_Image_Filter/60s_TV.cpp" "CMakeFiles/60s_TV.dir/60s_TV.cpp.o" "gcc" "CMakeFiles/60s_TV.dir/60s_TV.cpp.o.d"
+  "/Users/bingweiwang/Documents/GitHub/FastCode_Image_Filter/60s_TV.cpp" "CMakeFiles/60s_TV.dir/60s_TV.cpp.o" "gcc" "CMakeFiles/60s_TV.dir/60s_TV.cpp.o.d"
   )
 
 # Targets to which this target links.

@@ -19,15 +19,13 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/local/Cellar/cmake/3.22.0/share/cmake/Modules/CMakeLanguageInformation.cmake"
   "/usr/local/Cellar/cmake/3.22.0/share/cmake/Modules/CMakeSystemSpecificInformation.cmake"
   "/usr/local/Cellar/cmake/3.22.0/share/cmake/Modules/CMakeSystemSpecificInitialize.cmake"
-  "/usr/local/Cellar/cmake/3.22.0/share/cmake/Modules/Compiler/AppleClang-C.cmake"
-  "/usr/local/Cellar/cmake/3.22.0/share/cmake/Modules/Compiler/AppleClang-CXX.cmake"
   "/usr/local/Cellar/cmake/3.22.0/share/cmake/Modules/Compiler/CMakeCommonCompilerMacros.cmake"
+  "/usr/local/Cellar/cmake/3.22.0/share/cmake/Modules/Compiler/Clang-C.cmake"
+  "/usr/local/Cellar/cmake/3.22.0/share/cmake/Modules/Compiler/Clang-CXX.cmake"
   "/usr/local/Cellar/cmake/3.22.0/share/cmake/Modules/Compiler/Clang.cmake"
   "/usr/local/Cellar/cmake/3.22.0/share/cmake/Modules/Compiler/GNU.cmake"
   "/usr/local/Cellar/cmake/3.22.0/share/cmake/Modules/FindPackageHandleStandardArgs.cmake"
   "/usr/local/Cellar/cmake/3.22.0/share/cmake/Modules/FindPackageMessage.cmake"
-  "/usr/local/Cellar/cmake/3.22.0/share/cmake/Modules/Platform/Apple-AppleClang-C.cmake"
-  "/usr/local/Cellar/cmake/3.22.0/share/cmake/Modules/Platform/Apple-AppleClang-CXX.cmake"
   "/usr/local/Cellar/cmake/3.22.0/share/cmake/Modules/Platform/Apple-Clang-C.cmake"
   "/usr/local/Cellar/cmake/3.22.0/share/cmake/Modules/Platform/Apple-Clang-CXX.cmake"
   "/usr/local/Cellar/cmake/3.22.0/share/cmake/Modules/Platform/Apple-Clang.cmake"
@@ -54,5 +52,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "CMakeFiles/60s_TV_ref.dir/DependInfo.cmake"
-  "CMakeFiles/60s_TV_init.dir/DependInfo.cmake"
+  "CMakeFiles/60s_TV.dir/DependInfo.cmake"
   )

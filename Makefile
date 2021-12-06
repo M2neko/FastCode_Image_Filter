@@ -130,41 +130,41 @@ depend:
 .PHONY : 60s_TV_ref/fast
 
 #=============================================================================
-# Target rules for targets named 60s_TV_init
+# Target rules for targets named 60s_TV
 
 # Build rule for target.
-60s_TV_init: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 60s_TV_init
-.PHONY : 60s_TV_init
+60s_TV: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 60s_TV
+.PHONY : 60s_TV
 
 # fast build rule for target.
-60s_TV_init/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/60s_TV_init.dir/build.make CMakeFiles/60s_TV_init.dir/build
-.PHONY : 60s_TV_init/fast
+60s_TV/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/60s_TV.dir/build.make CMakeFiles/60s_TV.dir/build
+.PHONY : 60s_TV/fast
 
-60s_TV_init.o: 60s_TV_init.cpp.o
-.PHONY : 60s_TV_init.o
+60s_TV.o: 60s_TV.cpp.o
+.PHONY : 60s_TV.o
 
 # target to build an object file
-60s_TV_init.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/60s_TV_init.dir/build.make CMakeFiles/60s_TV_init.dir/60s_TV_init.cpp.o
-.PHONY : 60s_TV_init.cpp.o
+60s_TV.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/60s_TV.dir/build.make CMakeFiles/60s_TV.dir/60s_TV.cpp.o
+.PHONY : 60s_TV.cpp.o
 
-60s_TV_init.i: 60s_TV_init.cpp.i
-.PHONY : 60s_TV_init.i
+60s_TV.i: 60s_TV.cpp.i
+.PHONY : 60s_TV.i
 
 # target to preprocess a source file
-60s_TV_init.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/60s_TV_init.dir/build.make CMakeFiles/60s_TV_init.dir/60s_TV_init.cpp.i
-.PHONY : 60s_TV_init.cpp.i
+60s_TV.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/60s_TV.dir/build.make CMakeFiles/60s_TV.dir/60s_TV.cpp.i
+.PHONY : 60s_TV.cpp.i
 
-60s_TV_init.s: 60s_TV_init.cpp.s
-.PHONY : 60s_TV_init.s
+60s_TV.s: 60s_TV.cpp.s
+.PHONY : 60s_TV.s
 
 # target to generate assembly for a file
-60s_TV_init.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/60s_TV_init.dir/build.make CMakeFiles/60s_TV_init.dir/60s_TV_init.cpp.s
-.PHONY : 60s_TV_init.cpp.s
+60s_TV.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/60s_TV.dir/build.make CMakeFiles/60s_TV.dir/60s_TV.cpp.s
+.PHONY : 60s_TV.cpp.s
 
 60s_TV_ref.o: 60s_TV_ref.cpp.o
 .PHONY : 60s_TV_ref.o
@@ -198,11 +198,11 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
-	@echo "... 60s_TV_init"
+	@echo "... 60s_TV"
 	@echo "... 60s_TV_ref"
-	@echo "... 60s_TV_init.o"
-	@echo "... 60s_TV_init.i"
-	@echo "... 60s_TV_init.s"
+	@echo "... 60s_TV.o"
+	@echo "... 60s_TV.i"
+	@echo "... 60s_TV.s"
 	@echo "... 60s_TV_ref.o"
 	@echo "... 60s_TV_ref.i"
 	@echo "... 60s_TV_ref.s"
