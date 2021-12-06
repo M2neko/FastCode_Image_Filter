@@ -63,6 +63,7 @@ CMAKE_BINARY_DIR = /Users/bingweiwang/Documents/GitHub/FastCode_Image_Filter
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/60s_TV_final.dir/all
 all: CMakeFiles/60s_TV_ref.dir/all
 all: CMakeFiles/60s_TV_init.dir/all
 .PHONY : all
@@ -72,9 +73,36 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/60s_TV_final.dir/clean
 clean: CMakeFiles/60s_TV_ref.dir/clean
 clean: CMakeFiles/60s_TV_init.dir/clean
 .PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/60s_TV_final.dir
+
+# All Build rule for target.
+CMakeFiles/60s_TV_final.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/60s_TV_final.dir/build.make CMakeFiles/60s_TV_final.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/60s_TV_final.dir/build.make CMakeFiles/60s_TV_final.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/bingweiwang/Documents/GitHub/FastCode_Image_Filter/CMakeFiles --progress-num=1,2 "Built target 60s_TV_final"
+.PHONY : CMakeFiles/60s_TV_final.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/60s_TV_final.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bingweiwang/Documents/GitHub/FastCode_Image_Filter/CMakeFiles 2
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/60s_TV_final.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/bingweiwang/Documents/GitHub/FastCode_Image_Filter/CMakeFiles 0
+.PHONY : CMakeFiles/60s_TV_final.dir/rule
+
+# Convenience name for target.
+60s_TV_final: CMakeFiles/60s_TV_final.dir/rule
+.PHONY : 60s_TV_final
+
+# clean rule for target.
+CMakeFiles/60s_TV_final.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/60s_TV_final.dir/build.make CMakeFiles/60s_TV_final.dir/clean
+.PHONY : CMakeFiles/60s_TV_final.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/60s_TV_ref.dir
@@ -83,7 +111,7 @@ clean: CMakeFiles/60s_TV_init.dir/clean
 CMakeFiles/60s_TV_ref.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/60s_TV_ref.dir/build.make CMakeFiles/60s_TV_ref.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/60s_TV_ref.dir/build.make CMakeFiles/60s_TV_ref.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/bingweiwang/Documents/GitHub/FastCode_Image_Filter/CMakeFiles --progress-num=3,4 "Built target 60s_TV_ref"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/bingweiwang/Documents/GitHub/FastCode_Image_Filter/CMakeFiles --progress-num=5,6 "Built target 60s_TV_ref"
 .PHONY : CMakeFiles/60s_TV_ref.dir/all
 
 # Build rule for subdir invocation for target.
@@ -109,7 +137,7 @@ CMakeFiles/60s_TV_ref.dir/clean:
 CMakeFiles/60s_TV_init.dir/all:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/60s_TV_init.dir/build.make CMakeFiles/60s_TV_init.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/60s_TV_init.dir/build.make CMakeFiles/60s_TV_init.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/bingweiwang/Documents/GitHub/FastCode_Image_Filter/CMakeFiles --progress-num=1,2 "Built target 60s_TV_init"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/Users/bingweiwang/Documents/GitHub/FastCode_Image_Filter/CMakeFiles --progress-num=3,4 "Built target 60s_TV_init"
 .PHONY : CMakeFiles/60s_TV_init.dir/all
 
 # Build rule for subdir invocation for target.

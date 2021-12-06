@@ -117,6 +117,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named 60s_TV_final
+
+# Build rule for target.
+60s_TV_final: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 60s_TV_final
+.PHONY : 60s_TV_final
+
+# fast build rule for target.
+60s_TV_final/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/60s_TV_final.dir/build.make CMakeFiles/60s_TV_final.dir/build
+.PHONY : 60s_TV_final/fast
+
+#=============================================================================
 # Target rules for targets named 60s_TV_ref
 
 # Build rule for target.
@@ -141,6 +154,30 @@ depend:
 60s_TV_init/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/60s_TV_init.dir/build.make CMakeFiles/60s_TV_init.dir/build
 .PHONY : 60s_TV_init/fast
+
+60s_TV_final.o: 60s_TV_final.cpp.o
+.PHONY : 60s_TV_final.o
+
+# target to build an object file
+60s_TV_final.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/60s_TV_final.dir/build.make CMakeFiles/60s_TV_final.dir/60s_TV_final.cpp.o
+.PHONY : 60s_TV_final.cpp.o
+
+60s_TV_final.i: 60s_TV_final.cpp.i
+.PHONY : 60s_TV_final.i
+
+# target to preprocess a source file
+60s_TV_final.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/60s_TV_final.dir/build.make CMakeFiles/60s_TV_final.dir/60s_TV_final.cpp.i
+.PHONY : 60s_TV_final.cpp.i
+
+60s_TV_final.s: 60s_TV_final.cpp.s
+.PHONY : 60s_TV_final.s
+
+# target to generate assembly for a file
+60s_TV_final.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/60s_TV_final.dir/build.make CMakeFiles/60s_TV_final.dir/60s_TV_final.cpp.s
+.PHONY : 60s_TV_final.cpp.s
 
 60s_TV_init.o: 60s_TV_init.cpp.o
 .PHONY : 60s_TV_init.o
@@ -198,8 +235,12 @@ help:
 	@echo "... depend"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... 60s_TV_final"
 	@echo "... 60s_TV_init"
 	@echo "... 60s_TV_ref"
+	@echo "... 60s_TV_final.o"
+	@echo "... 60s_TV_final.i"
+	@echo "... 60s_TV_final.s"
 	@echo "... 60s_TV_init.o"
 	@echo "... 60s_TV_init.i"
 	@echo "... 60s_TV_init.s"

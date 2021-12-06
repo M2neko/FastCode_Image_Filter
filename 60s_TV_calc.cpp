@@ -90,8 +90,6 @@ void tv_60(Mat img) {
 						__m256 min_val1 = _mm256_min_ps(add_val1, comp_val1);
 
 						_mm256_store_ps(b + i, min_val1)
-						_mm256_store_ps(g + i, min_val1)
-						_mm256_store_ps(r + i, min_val1)
 
 				}else{
 						//gray.at<uchar>(i,j) = std::max(gray.at<uchar>(i,j) - rand()%((int)val+1), 0);

@@ -44,7 +44,7 @@ ENDMACRO()
 # add_example(sepia)
 # add_example(duo_tone)
 # add_example(duo_tone_ref)
-# add_example(60s_TV_final)
+add_example(60s_TV_final)
 add_example(60s_TV_ref)
 add_example(60s_TV_init)
 
