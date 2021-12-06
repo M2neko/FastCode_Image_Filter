@@ -1,5 +1,5 @@
 CMakeFiles/duo_tone.dir/duo_tone.cpp.o: \
-  /Users/gracesun/Desktop/645/project/FastCode_Image_Filter/duo_tone.cpp \
+  /Users/bingweiwang/Documents/GitHub/FastCode_Image_Filter/duo_tone.cpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/iostream \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/__config \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/pthread.h \
@@ -223,50 +223,121 @@ CMakeFiles/duo_tone.dir/duo_tone.cpp.o: \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/__bsd_locale_defaults.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/bitset \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/__bit_reference \
-  /usr/local/Cellar/opencv/4.5.3_2/include/opencv4/opencv2/highgui.hpp \
-  /usr/local/Cellar/opencv/4.5.3_2/include/opencv4/opencv2/core.hpp \
-  /usr/local/Cellar/opencv/4.5.3_2/include/opencv4/opencv2/core/cvdef.h \
-  /usr/local/Cellar/opencv/4.5.3_2/include/opencv4/opencv2/core/version.hpp \
-  /usr/local/Cellar/opencv/4.5.3_2/include/opencv4/opencv2/core/hal/interface.h \
-  /usr/local/Cellar/opencv/4.5.3_2/include/opencv4/opencv2/core/cv_cpu_dispatch.h \
+  /usr/local/Cellar/opencv/4.5.3_3/include/opencv4/opencv2/highgui.hpp \
+  /usr/local/Cellar/opencv/4.5.3_3/include/opencv4/opencv2/core.hpp \
+  /usr/local/Cellar/opencv/4.5.3_3/include/opencv4/opencv2/core/cvdef.h \
+  /usr/local/Cellar/opencv/4.5.3_3/include/opencv4/opencv2/core/version.hpp \
+  /usr/local/Cellar/opencv/4.5.3_3/include/opencv4/opencv2/core/hal/interface.h \
+  /usr/local/Cellar/opencv/4.5.3_3/include/opencv4/opencv2/core/cv_cpu_dispatch.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/emmintrin.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/xmmintrin.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/mmintrin.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/mm_malloc.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/array \
-  /usr/local/Cellar/opencv/4.5.3_2/include/opencv4/opencv2/core/base.hpp \
-  /usr/local/Cellar/opencv/4.5.3_2/include/opencv4/opencv2/opencv_modules.hpp \
-  /usr/local/Cellar/opencv/4.5.3_2/include/opencv4/opencv2/core/cvstd.hpp \
+  /usr/local/Cellar/opencv/4.5.3_3/include/opencv4/opencv2/core/base.hpp \
+  /usr/local/Cellar/opencv/4.5.3_3/include/opencv4/opencv2/opencv_modules.hpp \
+  /usr/local/Cellar/opencv/4.5.3_3/include/opencv4/opencv2/core/cvstd.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/cmath \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/math.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/math.h \
-  /usr/local/Cellar/opencv/4.5.3_2/include/opencv4/opencv2/core/cvstd_wrapper.hpp \
-  /usr/local/Cellar/opencv/4.5.3_2/include/opencv4/opencv2/core/neon_utils.hpp \
-  /usr/local/Cellar/opencv/4.5.3_2/include/opencv4/opencv2/core/vsx_utils.hpp \
-  /usr/local/Cellar/opencv/4.5.3_2/include/opencv4/opencv2/core/check.hpp \
-  /usr/local/Cellar/opencv/4.5.3_2/include/opencv4/opencv2/core/traits.hpp \
-  /usr/local/Cellar/opencv/4.5.3_2/include/opencv4/opencv2/core/matx.hpp \
-  /usr/local/Cellar/opencv/4.5.3_2/include/opencv4/opencv2/core/saturate.hpp \
-  /usr/local/Cellar/opencv/4.5.3_2/include/opencv4/opencv2/core/fast_math.hpp \
-  /usr/local/Cellar/opencv/4.5.3_2/include/opencv4/opencv2/core/types.hpp \
+  /usr/local/Cellar/opencv/4.5.3_3/include/opencv4/opencv2/core/cvstd_wrapper.hpp \
+  /usr/local/Cellar/opencv/4.5.3_3/include/opencv4/opencv2/core/neon_utils.hpp \
+  /usr/local/Cellar/opencv/4.5.3_3/include/opencv4/opencv2/core/vsx_utils.hpp \
+  /usr/local/Cellar/opencv/4.5.3_3/include/opencv4/opencv2/core/check.hpp \
+  /usr/local/Cellar/opencv/4.5.3_3/include/opencv4/opencv2/core/traits.hpp \
+  /usr/local/Cellar/opencv/4.5.3_3/include/opencv4/opencv2/core/matx.hpp \
+  /usr/local/Cellar/opencv/4.5.3_3/include/opencv4/opencv2/core/saturate.hpp \
+  /usr/local/Cellar/opencv/4.5.3_3/include/opencv4/opencv2/core/fast_math.hpp \
+  /usr/local/Cellar/opencv/4.5.3_3/include/opencv4/opencv2/core/types.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/cfloat \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/float.h \
   /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/float.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/float.h \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/vector \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/__split_buffer \
-  /usr/local/Cellar/opencv/4.5.3_2/include/opencv4/opencv2/core/mat.hpp \
-  /usr/local/Cellar/opencv/4.5.3_2/include/opencv4/opencv2/core/bufferpool.hpp \
-  /usr/local/Cellar/opencv/4.5.3_2/include/opencv4/opencv2/core/mat.inl.hpp \
-  /usr/local/Cellar/opencv/4.5.3_2/include/opencv4/opencv2/core/persistence.hpp \
-  /usr/local/Cellar/opencv/4.5.3_2/include/opencv4/opencv2/core/operations.hpp \
-  /usr/local/Cellar/opencv/4.5.3_2/include/opencv4/opencv2/core/cvstd.inl.hpp \
+  /usr/local/Cellar/opencv/4.5.3_3/include/opencv4/opencv2/core/mat.hpp \
+  /usr/local/Cellar/opencv/4.5.3_3/include/opencv4/opencv2/core/bufferpool.hpp \
+  /usr/local/Cellar/opencv/4.5.3_3/include/opencv4/opencv2/core/mat.inl.hpp \
+  /usr/local/Cellar/opencv/4.5.3_3/include/opencv4/opencv2/core/persistence.hpp \
+  /usr/local/Cellar/opencv/4.5.3_3/include/opencv4/opencv2/core/operations.hpp \
+  /usr/local/Cellar/opencv/4.5.3_3/include/opencv4/opencv2/core/cvstd.inl.hpp \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/complex \
   /Library/Developer/CommandLineTools/SDKs/MacOSX11.3.sdk/usr/include/c++/v1/sstream \
-  /usr/local/Cellar/opencv/4.5.3_2/include/opencv4/opencv2/core/utility.hpp \
-  /usr/local/Cellar/opencv/4.5.3_2/include/opencv4/opencv2/core/optim.hpp \
-  /usr/local/Cellar/opencv/4.5.3_2/include/opencv4/opencv2/core/ovx.hpp \
-  /usr/local/Cellar/opencv/4.5.3_2/include/opencv4/opencv2/imgcodecs.hpp \
-  /usr/local/Cellar/opencv/4.5.3_2/include/opencv4/opencv2/videoio.hpp \
-  /usr/local/Cellar/opencv/4.5.3_2/include/opencv4/opencv2/imgproc.hpp \
-  /usr/local/Cellar/opencv/4.5.3_2/include/opencv4/opencv2/./imgproc/segmentation.hpp
+  /usr/local/Cellar/opencv/4.5.3_3/include/opencv4/opencv2/core/utility.hpp \
+  /usr/local/Cellar/opencv/4.5.3_3/include/opencv4/opencv2/core/optim.hpp \
+  /usr/local/Cellar/opencv/4.5.3_3/include/opencv4/opencv2/core/ovx.hpp \
+  /usr/local/Cellar/opencv/4.5.3_3/include/opencv4/opencv2/imgcodecs.hpp \
+  /usr/local/Cellar/opencv/4.5.3_3/include/opencv4/opencv2/videoio.hpp \
+  /usr/local/Cellar/opencv/4.5.3_3/include/opencv4/opencv2/imgproc.hpp \
+  /usr/local/Cellar/opencv/4.5.3_3/include/opencv4/opencv2/./imgproc/segmentation.hpp \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/immintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/pmmintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/tmmintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/smmintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/popcntintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/wmmintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/__wmmintrin_aes.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/__wmmintrin_pclmul.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/clflushoptintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/clwbintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/avxintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/avx2intrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/f16cintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/vpclmulqdqintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/bmiintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/bmi2intrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/lzcntintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/fmaintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/avx512fintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/avx512vlintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/avx512bwintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/avx512bitalgintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/avx512cdintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/avx512vpopcntdqintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/avx512vpopcntdqvlintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/avx512vnniintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/avx512vlvnniintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/avx512dqintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/avx512vlbitalgintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/avx512vlbwintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/avx512vlcdintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/avx512vldqintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/avx512erintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/avx512ifmaintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/avx512ifmavlintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/avx512vbmiintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/avx512vbmivlintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/avx512vbmi2intrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/avx512vlvbmi2intrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/avx512pfintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/avx512bf16intrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/avx512vlbf16intrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/pkuintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/vaesintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/gfniintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/rtmintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/xtestintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/shaintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/fxsrintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/xsaveintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/xsaveoptintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/xsavecintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/xsavesintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/cetintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/adxintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/rdseedintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/wbnoinvdintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/cldemoteintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/waitpkgintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/movdirintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/pconfigintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/sgxintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/ptwriteintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/invpcidintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/amxintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/avx512vp2intersectintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/avx512vlvp2intersectintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/enqcmdintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/serializeintrin.h \
+  /Library/Developer/CommandLineTools/usr/lib/clang/12.0.5/include/tsxldtrkintrin.h \
+  /usr/local/include/omp.h

@@ -23,7 +23,7 @@ void tv_60(Mat img) {
 
 	
 	
-	#pragma omp parallel for num_threads(NUM_THREAD)
+	//#pragma omp parallel for num_threads(NUM_THREAD)
 	while (true) {
 		int height = img.size().height;
 		int width = img.size().width;

@@ -2,6 +2,7 @@
 #include <string>
 #include <opencv2/highgui.hpp>
 #include <opencv2/imgproc.hpp>
+#include <immintrin.h>
 #include <omp.h>
 #define NUM_THREAD 16
 #define TEST_MODE 0
@@ -18,10 +19,16 @@ void tv_60(Mat img) {
 	namedWindow("image2");
 	int slider = 0;
 	int slider2 = 0;
-	createTrackbar("val","image",&slider,255,nothing);
-	createTrackbar("threshold","image",&slider2,100,nothing);
+	createTrackbar("val","image",nullptr,255,nothing);
+	setTrackbarPos("val","image",slider);
 
+	createTrackbar("threshold","image",nullptr,100,nothing);
+	setTrackbarPos("threshold","image",slider2);
+
+	// auto start = system_clock::now();
 	int count = 0;
+    int height = img.size().height;
+	int width = img.size().width;
 
 	// move changed to gray the outer loop to save the time to change it every time in the loop
 	Mat gray = img.clone();
@@ -44,7 +51,7 @@ void tv_60(Mat img) {
 		__m256 r1_mul = _mm256_mul_ps(r1, calc1);
 
 		__m256 gray_num = _mm256_add_ps(b1_mul, g1_mul);
-		__m256 gray_num = _mm256_add_ps(gray_num, r1_mul);
+		gray_num = _mm256_add_ps(gray_num, r1_mul);
 
 		_mm256_store_ps(b + i, gray_num);
 		_mm256_store_ps(g + i, gray_num);
@@ -53,8 +60,6 @@ void tv_60(Mat img) {
 	}	
 	
 	while (count <= 1000) {
-		int height = img.size().height;
-		int width = img.size().width;
 
 		// cvtColor(img, gray, COLOR_BGR2GRAY);
 		float thresh = getTrackbarPos("threshold","image");
@@ -70,7 +75,7 @@ void tv_60(Mat img) {
 				__m256 r1 = _mm256_load_ps(r + i);
 
 				__m256 gray_num = _mm256_add_ps(b1, g1);
-				__m256 gray_num = _mm256_add_ps(gray_num, r1);
+				gray_num = _mm256_add_ps(gray_num, r1);
 
 			    __m256 rand_val1 = _mm256_set_ps((float)rand()%100, (float)rand()%100, (float)rand()%100, (float)rand()%100, (float)rand()%100, (float)rand()%100, (float)rand()%100, (float)rand()%100);
 				__m256 rand_val2 = _mm256_set_ps((float)rand()%2, (float)rand()%2, (float)rand()%2 (float)rand()%2, (float)rand()%2, (float)rand()%2, (float)rand()%2, (float)rand()%2);

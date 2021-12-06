@@ -8,7 +8,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/Users/gracesun/Desktop/645/project/FastCode_Image_Filter/duo_tone.cpp" "CMakeFiles/duo_tone.dir/duo_tone.cpp.o" "gcc" "CMakeFiles/duo_tone.dir/duo_tone.cpp.o.d"
+  "/Users/bingweiwang/Documents/GitHub/FastCode_Image_Filter/duo_tone.cpp" "CMakeFiles/duo_tone.dir/duo_tone.cpp.o" "gcc" "CMakeFiles/duo_tone.dir/duo_tone.cpp.o.d"
   )
 
 # Targets to which this target links.

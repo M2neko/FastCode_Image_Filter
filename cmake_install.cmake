@@ -1,4 +1,4 @@
-# Install script for directory: /Users/gracesun/Desktop/645/project/FastCode_Image_Filter
+# Install script for directory: /Users/bingweiwang/Documents/GitHub/FastCode_Image_Filter
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/gracesun/Desktop/645/project/FastCode_Image_Filter/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/bingweiwang/Documents/GitHub/FastCode_Image_Filter/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
