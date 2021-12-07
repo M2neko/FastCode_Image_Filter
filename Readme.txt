@@ -19,7 +19,7 @@ Running Instructions:
 6. Change image file name in each file `Mat img = imread("image2.jpg");` to use the different input image.
 7. Change TEST_MODE in each file to make it running in test mode or not. TEST_MODE = 0: the program will run RUNNING_TIMES times to show the performance(average running time). TEST_MODE = 1: the program will show the image with GUI to run the image filtering.
 
-Notes
+Notes:
 1. The project is using opencv2, avx, avx2, and openmp. Please make sure you have these installed in your machine.
 2. For different machines, you may change the linking in CMakeLists.txt (Line 30) to modify the flag.
 3. The current linking is for Mac, "-I/usr/local/include -L/usr/local/lib". If you are using Windows or Ubuntu, you may delete these flags as well as "-lomp".
