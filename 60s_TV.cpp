@@ -79,7 +79,6 @@ void tv_60(Mat img, int times)
 
     // move changed to gray the outer loop to save the time to change it every time in the loop
     Mat gray = img.clone();
-    // gray.convertTo(gray,CV_32F);
     Mat channels[3];
     split(gray, channels);
     Mat H = channels[0];

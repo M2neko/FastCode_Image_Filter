@@ -5,7 +5,7 @@
 #include <immintrin.h>
 #include <chrono>
 #include <omp.h>
-#define NUM_THREAD 4
+#define NUM_THREAD 2
 #define TEST_MODE 0
 
 using namespace std;
@@ -44,7 +44,7 @@ void brightness(Mat img, int times)
 		float *x = &(S.at<float>(0, 0));
 		float *y = &(V.at<float>(0, 0));
 
-// #pragma omp parallel for num_threads(NUM_THREAD)
+#pragma omp parallel for num_threads(NUM_THREAD)
 		for (int i = 0; i < H.size().height * H.size().width; i += 48)
 		{
 			__m256 temp111 = _mm256_load_ps(x + i);
@@ -57,8 +57,6 @@ void brightness(Mat img, int times)
 			__m256 temp213 = _mm256_min_ps(temp212, q);
 			_mm256_store_ps(y + i, temp213);
 
-			// if (i + 8 == H.size().height * H.size().width) break;
-
 			__m256 temp121 = _mm256_load_ps(x + i + 8);
 			__m256 temp122 = _mm256_mul_ps(temp121, b);
 			__m256 temp123 = _mm256_min_ps(temp122, q);
@@ -68,8 +66,6 @@ void brightness(Mat img, int times)
 			__m256 temp222 = _mm256_mul_ps(temp221, b);
 			__m256 temp223 = _mm256_min_ps(temp222, q);
 			_mm256_store_ps(y + i + 8, temp223);
-
-			// if (i + 16 == H.size().height * H.size().width) break;
 
 			__m256 temp131 = _mm256_load_ps(x + i + 16);
 			__m256 temp132 = _mm256_mul_ps(temp131, b);
@@ -81,8 +77,6 @@ void brightness(Mat img, int times)
 			__m256 temp233 = _mm256_min_ps(temp232, q);
 			_mm256_store_ps(y + i + 16, temp233);
 
-			// if (i + 24 == H.size().height * H.size().width) break;
-
 			__m256 temp141 = _mm256_load_ps(x + i + 24);
 			__m256 temp142 = _mm256_mul_ps(temp141, b);
 			__m256 temp143 = _mm256_min_ps(temp142, q);
@@ -93,8 +87,6 @@ void brightness(Mat img, int times)
 			__m256 temp243 = _mm256_min_ps(temp242, q);
 			_mm256_store_ps(y + i + 24, temp243);
 
-			// if (i + 32 == H.size().height * H.size().width) break;
-
 			__m256 temp151 = _mm256_load_ps(x + i + 32);
 			__m256 temp152 = _mm256_mul_ps(temp151, b);
 			__m256 temp153 = _mm256_min_ps(temp152, q);
@@ -104,8 +96,6 @@ void brightness(Mat img, int times)
 			__m256 temp252 = _mm256_mul_ps(temp251, b);
 			__m256 temp253 = _mm256_min_ps(temp252, q);
 			_mm256_store_ps(y + i + 32, temp253);
-
-			// if (i + 40 == H.size().height * H.size().width) break;
 
 			__m256 temp161 = _mm256_load_ps(x + i + 40);
 			__m256 temp162 = _mm256_mul_ps(temp161, b);
