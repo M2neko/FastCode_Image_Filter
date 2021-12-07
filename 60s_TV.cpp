@@ -5,7 +5,7 @@
 #include <immintrin.h>
 #include <chrono>
 #include <omp.h>
-#define NUM_THREAD 32
+#define NUM_THREAD 4
 #define TEST_MODE 0
 
 using namespace std;
@@ -16,6 +16,7 @@ double dsum = 0.0;
 
 static __m128i cur_seed;
 
+// Reference: https://stackoverflow.com/questions/1640258/need-a-fast-random-generator-for-c
 inline void rand_sse(unsigned int *result)
 {
     __m128i cur_seed_split;
@@ -93,7 +94,6 @@ void tv_60(Mat img, int times)
     __m256 calc1 = _mm256_set1_ps(0.299);
     __m256 calc2 = _mm256_set1_ps(0.587);
     __m256 calc3 = _mm256_set1_ps(0.114);
-#pragma omp parallel for num_threads(NUM_THREAD)
     for (int i = 0; i < height * width; i += 8)
     {
         // 0.299 ∙ Red + 0.587 ∙ Green + 0.114 ∙ Blue.
@@ -146,7 +146,7 @@ void tv_60(Mat img, int times)
         float *gray_pixel = &(gray_temp.at<float>(0, 0));
 
 #pragma omp parallel for num_threads(NUM_THREAD)
-        for (int i = 0; i < height * width; i += 32)
+        for (int i = 0; i < height * width; i += 40)
         {
             __m256 gray_channel1 = _mm256_load_ps(gray_pixel + i);
             get_rand((unsigned int *)randset);
@@ -154,12 +154,12 @@ void tv_60(Mat img, int times)
             get_rand((unsigned int *)randset);
             __m256 rand_val12 = _mm256_set_ps((float)(randset[0] % 2), (float)(randset[1] % 2), (float)(randset[2] % 2), (float)(randset[3] % 2), (float)(randset[4] % 2), (float)(randset[5] % 2), (float)(randset[6] % 2), (float)(randset[7] % 2));
             // compare rand() % 100 <= thresh
-            // rand_val111[0] - get_thresh[0]是负数，返回0
-            // rand_val11[0] - get_thresh[0]是正数，返回nan
+            // rand_val111[0] - get_thresh[0] negative, return 0
+            // rand_val11[0] - get_thresh[0] positive, return NAN
             __m256 cmp_val11 = _mm256_cmp_ps(rand_val11, get_thresh, _CMP_GT_OQ);
             // compare rand() % 2 == 0
-            // rand_val12[0]是1，返回0
-            // rand_val12[0]是0，返回nan
+            // rand_val12[0] is 1, return 0
+            // rand_val12[0] is 0, return NAN
             __m256 cmp_val12 = _mm256_cmp_ps(rand_val12, comp_val2, _CMP_EQ_OQ);
             get_rand((unsigned int *)randset);
             __m256 calc_pos1 = _mm256_set_ps((float)(randset[0] % ((int)val + 1)), (float)(randset[1] % ((int)val + 1)), (float)(randset[2] % ((int)val + 1)), (float)(randset[3] % ((int)val + 1)), (float)(randset[4] % ((int)val + 1)), (float)(randset[5] % ((int)val + 1)), (float)(randset[6] % ((int)val + 1)), (float)(randset[7] % ((int)val + 1)));
@@ -247,6 +247,29 @@ void tv_60(Mat img, int times)
             __m256 bound_42 = _mm256_max_ps(bound_41, comp_val2);
 
             _mm256_store_ps(gray_pixel + i + 24, bound_42);
+
+
+
+			__m256 gray_channel5 = _mm256_load_ps(gray_pixel + i + 32);
+            get_rand((unsigned int *)randset);
+            __m256 rand_val51 = _mm256_set_ps((float)(randset[0] % 100), (float)(randset[1] % 100), (float)(randset[2] % 100), (float)(randset[3] % 100), (float)(randset[4] % 100), (float)(randset[5] % 100), (float)(randset[6] % 100), (float)(randset[7] % 100));
+            get_rand((unsigned int *)randset);
+            __m256 rand_val52 = _mm256_set_ps((float)(randset[0] % 2), (float)(randset[1] % 2), (float)(randset[2] % 2), (float)(randset[3] % 2), (float)(randset[4] % 2), (float)(randset[5] % 2), (float)(randset[6] % 2), (float)(randset[7] % 2));
+            __m256 cmp_val51 = _mm256_cmp_ps(rand_val51, get_thresh, _CMP_GT_OQ);
+            __m256 cmp_val52 = _mm256_cmp_ps(rand_val52, comp_val2, _CMP_EQ_OQ);
+            get_rand((unsigned int *)randset);
+            __m256 calc_pos5 = _mm256_set_ps((float)(randset[0] % ((int)val + 1)), (float)(randset[1] % ((int)val + 1)), (float)(randset[2] % ((int)val + 1)), (float)(randset[3] % ((int)val + 1)), (float)(randset[4] % ((int)val + 1)), (float)(randset[5] % ((int)val + 1)), (float)(randset[6] % ((int)val + 1)), (float)(randset[7] % ((int)val + 1)));
+            get_rand((unsigned int *)randset);
+            __m256 calc_neg5 = _mm256_set_ps((float)-(randset[0] % ((int)val + 1)), (float)(-randset[1] % ((int)val + 1)), (float)(-randset[2] % ((int)val + 1)), (float)(-randset[3] % ((int)val + 1)), (float)(-randset[4] % ((int)val + 1)), (float)(-randset[5] % ((int)val + 1)), (float)(-randset[6] % ((int)val + 1)), (float)(-randset[7] % ((int)val + 1)));
+
+            __m256 blend_51 = _mm256_blendv_ps(calc_pos5, calc_neg5, cmp_val52);
+            __m256 add_val51 = _mm256_add_ps(gray_channel5, blend_51);
+            __m256 blend_52 = _mm256_blendv_ps(add_val51, gray_channel5, cmp_val51);
+
+            __m256 bound_51 = _mm256_min_ps(blend_52, comp_val1);
+            __m256 bound_52 = _mm256_max_ps(bound_51, comp_val2);
+
+            _mm256_store_ps(gray_pixel + i + 32, bound_52);
         }
 
 

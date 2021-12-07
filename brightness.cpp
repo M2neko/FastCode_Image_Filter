@@ -5,7 +5,7 @@
 #include <immintrin.h>
 #include <chrono>
 #include <omp.h>
-#define NUM_THREAD 16
+#define NUM_THREAD 4
 #define TEST_MODE 0
 
 using namespace std;
@@ -44,14 +44,7 @@ void brightness(Mat img, int times)
 		float *x = &(S.at<float>(0, 0));
 		float *y = &(V.at<float>(0, 0));
 
-		// int chunk = H.size().height * H.size().width / NUM_THREAD;
-
-// #pragma omp parallel num_threads(NUM_THREAD)
-// 		{
-// 			int id = omp_get_thread_num();
-// 			int start = chunk * id;
-// 			int end = chunk * (id + 1);
-// #pragma omp for
+// #pragma omp parallel for num_threads(NUM_THREAD)
 		for (int i = 0; i < H.size().height * H.size().width; i += 48)
 		{
 			__m256 temp111 = _mm256_load_ps(x + i);
@@ -124,7 +117,6 @@ void brightness(Mat img, int times)
 			__m256 temp263 = _mm256_min_ps(temp262, q);
 			_mm256_store_ps(y + i + 40, temp263);
 		}
-		// }
 
 		auto end = system_clock::now();
 		auto duration = duration_cast<microseconds>(end - start);
@@ -152,14 +144,7 @@ int main(int argc, char **argv)
 {
 	int times = atoi(argv[1]);
 	Mat img = imread("image2.jpg");
-	// auto start = system_clock::now();
 	brightness(img, times);
-	// auto end = system_clock::now();
-	// auto duration = duration_cast<microseconds>(end - start);
-	// double conTime = dsum;
-	// int m = 4;
-	// int n = 8;
-	// cout << m * n * times / conTime << endl;
 	cout << "It takes "
 		 << dsum * microseconds::period::num / microseconds::period::den * 1000.0 / double(times)
 		 << " milliseconds" << endl;

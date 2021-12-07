@@ -9,6 +9,7 @@ using namespace std;
 using namespace cv;
 using namespace chrono;
 
+double dsum = 0.0;
 
 void nothing(int x, void* data) {}
 
@@ -77,6 +78,7 @@ void duo_tone(Mat img, int times){
 		Mat res = img.clone();
 		Mat channels[3];
 		split(img,channels);
+		auto start = system_clock::now();
 		channels[0].convertTo(channels[0], CV_32F);
 		channels[1].convertTo(channels[1], CV_32F);
 		channels[2].convertTo(channels[2], CV_32F);
@@ -93,6 +95,10 @@ void duo_tone(Mat img, int times){
 				}
 			}
 		}
+
+		auto end = system_clock::now();
+		auto duration = duration_cast<microseconds>(end - start);
+		dsum += duration.count();
 		vector<Mat> newChannels{channels[0],channels[1],channels[2]};
 		merge(newChannels,res);
 
@@ -124,12 +130,9 @@ int main(int argc, char **argv)
 
 	Mat img = imread("image2.jpg");
 
-	auto start = system_clock::now();
 	duo_tone(img, times);
-	auto end = system_clock::now();
-	auto duration = duration_cast<microseconds>(end - start);
 	cout << "It takes "
-		 << double(duration.count()) * microseconds::period::num / microseconds::period::den * 1000.0 / double(times)
+		 << dsum * microseconds::period::num / microseconds::period::den * 1000.0 / double(times)
 		 << " milliseconds" << endl;
 	return 0;
 }

@@ -57,7 +57,7 @@ void tv_60(Mat img, int times)
 						gray.at<uchar>(i, j) = std::min(gray.at<uchar>(i, j) + rand() % ((int)val + 1), 255);
 					else
 						gray.at<uchar>(i, j) = std::max(gray.at<uchar>(i, j) - rand() % ((int)val + 1), 0);
-				}
+				}				
 			}
 		}
 
